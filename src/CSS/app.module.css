@@ -2,24 +2,6 @@
     width: 80vw;
     height: 100vh;
     margin: auto;
-    background-color: black;
-
-}
-#logo{
-    
-    height: auto;
-    width: 200px;
-}
-
-.header{
-    height: 10%;
-    width: 100%;
-    background-color: green;
-    display: flex;
-    align-items: center;
-
-}
-
-.nav{
+    background-color: grey;
 
 }

@@ -32,3 +32,10 @@ massive(CONNECTION_STRING).then((database) => {
 app.listen(SERVER_PORT, () => {
   console.log(`${SERVER_PORT} Kebabs in my tummy`)
 })
+
+const ctrl = require('./controller')
+
+
+app.get('/checkSession', ctrl.sessionCheck)
+app.delete('/logOut', ctrl.logout)
+app.post('/auth/userlogin', ctrl.adminLogin)
