@@ -52,7 +52,9 @@ module.exports ={
       podcastUpload: (req, res) => { 
         let db = req.app.get('db')
         console.log(req.body)
-        const { title, description, content, url, date} = req.body
+        var { title, description, content, url, date} = req.body
+        var url= url.split("/")
+        
         db.uploadPodcast({title, description, content, url, date}).then((data) => { 
           console.log(data)
           res.status(200).send(data)

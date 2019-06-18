@@ -5,6 +5,7 @@ import router from './router'
 import Nav from './Components/Nav/Nav'
 
 
+
 function App() {
   return (
    <HashRouter>
@@ -12,6 +13,7 @@ function App() {
        <Nav />
        {router}
      </div>
+     {/* <Footer />  */}
    </HashRouter>
   );
 }
