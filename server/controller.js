@@ -49,6 +49,22 @@ module.exports ={
     
       },
 
+      podcastUpload: (req, res) => { 
+        let db = req.app.get('db')
+        console.log(req.body)
+        const { title, description, content, url, date} = req.body
+        db.uploadPodcast({title, description, content, url, date}).then((data) => { 
+          console.log(data)
+          res.status(200).send(data)
+        })
+       
+      },
+      getAllPodcasts: async (req, res) => { 
+        let db = await req.app.get('db')
+        db.getAllPodcasts().then((data) => {
+          res.status(200).send(data)
+        }) 
 
+      }
 
 }
