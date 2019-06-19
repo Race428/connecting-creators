@@ -17,32 +17,15 @@ export default class LandingPage extends Component {
 
 
     async componentDidMount() {
-        await axios.get('/api/podcasts/getall').then((res => {
-            this.setState({
-                podcasts: res.data
-            })
-        }))
+        await axios.get('/api/podcasts/getall')
     }
     render() {
-        const podcasts = this.state.podcasts.map((element, index) => {
-            return <>
-                <div className={landingStyles.podcast} key={index}>
-                    {/* <div>{element.title}</div> */}
-                    <div>{element.description}</div>
-                    {/* <div>{element.content}</div> */}
-                    <iframe width="420" height="345" src={element.url}>
-</iframe>
-                    <div>{element.url}</div>
-                    <div>{element.date}</div>
-                </div>
-            </>
-        })
+      
 
         return (
             <>
-<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-                {podcasts}
+
+               
             </>
         )
     }

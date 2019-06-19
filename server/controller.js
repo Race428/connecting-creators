@@ -53,7 +53,6 @@ module.exports ={
         let db = req.app.get('db')
         console.log(req.body)
         var { title, description, content, url, date} = req.body
-        var url= url.split("/")
         
         db.uploadPodcast({title, description, content, url, date}).then((data) => { 
           console.log(data)
