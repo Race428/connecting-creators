@@ -30,7 +30,8 @@ export default class LandingPage extends Component {
                     {/* <div>{element.title}</div> */}
                     <div>{element.description}</div>
                     {/* <div>{element.content}</div> */}
-                    <video title ={landingStyles.title}width="560" height="315" src={element.url}frameborder="0" ></video>
+                    <iframe width="420" height="345" src={element.url}>
+</iframe>
                     <div>{element.url}</div>
                     <div>{element.date}</div>
                 </div>
