@@ -1,5 +1,5 @@
 .logo{
-    height: 50px;
+    height: 20px;
     widows: auto;
 }
 
@@ -11,8 +11,8 @@ nav{
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    top:0;
-    z-index: 500;
+    bottom:0;
+    z-index: 499;
     background-color: black;
     /* margin-bottom: 15em; */
     

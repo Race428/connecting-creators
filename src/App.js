@@ -11,7 +11,9 @@ function App() {
    <HashRouter>
      <div className={appStyles.app}>
        <Nav />
+       <div className={appStyles.pageView}>
        {router}
+       </div>
      </div>
      {/* <Footer />  */}
    </HashRouter>
