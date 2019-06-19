@@ -1,7 +1,12 @@
+body{
+    background-color: black;
+}
+
 .app{
     width: 80vw;
     height: 100vh;
+    /* overflow-x: hidden; */
     margin: auto;
-    background-color: grey;
+  
 
 }
