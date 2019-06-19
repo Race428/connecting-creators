@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import podcastStyles from '../../CSS/podcastPage.module.css'
+import Footer from '../footer'
 
 
 
@@ -57,6 +58,7 @@ export default class Podcasts extends Component {
                     <div className={podcastStyles.podcastContainer}>
                         {podcasts}
                     </div>
+                    <Footer />
                 </div>
 
             </>

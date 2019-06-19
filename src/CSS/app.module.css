@@ -1,5 +1,5 @@
 body{
-    background-color: grey;
+    background-color: black;
 }
 
 .app{
@@ -15,4 +15,5 @@ body{
     width: 100%;
     height: 85vh;
     margin-top: 15vh;
+    /* margin-bottom:10vh; */
 }

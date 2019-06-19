@@ -1,11 +1,12 @@
 .pageView {
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 14em;
 }
 
 .titleText {
@@ -13,7 +14,7 @@
 }
 
 .podcastContainer {
-    padding-top: 5em;
+width: 100%;
 }
 
 .podcast {
@@ -24,7 +25,7 @@
     align-items: center;
     /* justify-content: center; */
     /* margin: auto; */
-    /* padding-bottom: 5em; */
+    padding-bottom: 15vh;
 }
 
 .podcastVideoWrapper {
@@ -49,7 +50,7 @@
 
 .podcastDescription{
     width:50%;
-    padding-bottom: 5em;
+    /* padding-bottom: 5em; */
 }
 
 
