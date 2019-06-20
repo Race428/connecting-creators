@@ -1,0 +1,46 @@
+.mike{
+    height: auto;
+    margin-top: 5em;
+    width: 300px;
+    
+
+   
+}
+
+
+.imageBox{
+
+
+    -webkit-animation: mymove 6s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+    animation: mymove 6s;
+    animation-fill-mode: forwards;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    from {bottom: 0px; opacity: 0;}
+    to {bottom: 100px; opacity: 1; }
+  }
+  
+  @keyframes mymove {
+    from {bottom: -200px; opacity: 0;}
+    to {bottom: 100px; opacity: 1;}
+  }
+
+
+
+/* Safari 4.0 - 8.0 */
+h1{
+    text-align: center;
+    width: 70%;
+    margin-top: 5em;
+
+}
+
+caption { 
+    font-size: .5em;
+}

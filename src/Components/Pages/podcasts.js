@@ -17,8 +17,8 @@ export default class Podcasts extends Component {
     }
 
 
-    async componentWillMount() {
-        await axios.get('/api/podcasts/getall').then((res => {
+    componentDidMount() {
+        axios.get('/api/podcasts/getall').then((res => {
             this.setState({
                 podcasts: res.data
             })
