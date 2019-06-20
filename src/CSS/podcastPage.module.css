@@ -75,13 +75,13 @@ width: 100%;
     .podcastVideoWrapper {
         width: 100%;
         object-fit: cover;
-        position: relative;
+        margin-top:500px;
     }
 
     .titleText{
         width: 80vw;
         margin-bottom: 1em;
-        position: relative;
+        /* position: relative; */
     }
 
     p{
