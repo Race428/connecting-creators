@@ -27,3 +27,17 @@ nav{
 a{
     text-decoration: none;
 }
+
+
+@media only screen and (max-width: 1100px) {
+  nav { 
+      width: 80%;
+      justify-content: space-around;
+      /* padding-right: 1em; */
+  }
+  .logo{
+      height: 25px; 
+      width: auto;
+      
+  }
+}
