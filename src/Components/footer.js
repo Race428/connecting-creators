@@ -20,17 +20,7 @@ export default class Footer extends Component {
                 </div>
                 </a>
                 
-                <Link to=''>
-                <div className={footerStyles.link}>
-                    Store
-                </div>
-                </Link>
-               
-                <Link to=''>
-                <div className={footerStyles.link}>
-                    About 
-                </div>
-                </Link>
+              
 
          
             </div>
