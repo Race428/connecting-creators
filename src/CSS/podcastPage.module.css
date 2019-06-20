@@ -21,6 +21,7 @@
 
 .podcastContainer {
 width: 100%;
+position: relative;
 }
 
 .podcast {
@@ -75,8 +76,9 @@ width: 100%;
     .podcastVideoWrapper {
         width: 100%;
         object-fit: cover;
-        margin-top:500px;
     }
+
+
 
     .titleText{
         width: 80vw;
