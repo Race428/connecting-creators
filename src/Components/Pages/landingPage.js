@@ -16,6 +16,7 @@ export default class LandingPage extends Component {
     }
 
 
+    
     async componentDidMount() {
         await axios.get('/api/podcasts/getall')
     }

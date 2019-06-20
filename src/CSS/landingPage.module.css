@@ -11,14 +11,16 @@
 .imageBox{
 
 
-    -webkit-animation: mymove 6s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation: mymove 3s;  /* Safari 4.0 - 8.0 */
     -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
-    animation: mymove 6s;
+    animation: mymove 3s;
     animation-fill-mode: forwards;
     position: relative;
     display: flex;
     flex-direction: column;
 }
+
+
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
@@ -28,7 +30,10 @@
   
   @keyframes mymove {
     from {bottom: -200px; opacity: 0;}
-    to {bottom: 100px; opacity: 1;}
+    to {bottom: 25px; opacity: .2;}
+    to {bottom: 50px; opacity: .5;}
+    to {bottom: 90px; opacity: .8;}
+    
   }
 
 
@@ -43,4 +48,15 @@ h1{
 
 caption { 
     font-size: .5em;
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+    .imageBox{
+        margin-top:3em;
+    }
+    h1 { 
+        margin-top: 1em;
+    }
 }
