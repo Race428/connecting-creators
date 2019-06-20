@@ -21,7 +21,7 @@
 
 .podcastContainer {
 width: 100%;
-position: relative;
+/* position: relative; */
 }
 
 .podcast {
@@ -89,6 +89,12 @@ position: relative;
     p{
         font-size: .8em;
     }
+    .podcastContainer {
+        /* width: 100%; */
+        /* position: relative; */
+        margin-top:500px;
+        
+        }
 }
 
 @keyframes fadein {
