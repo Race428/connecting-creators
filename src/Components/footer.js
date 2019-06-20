@@ -16,7 +16,7 @@ export default class Footer extends Component {
                 <a href='https://instagram.com/connectingcreators?igshid=1texewb30au8'>
                 <div className={footerStyles.link}>
                     <img id={footerStyles.icon} src={Insta} alt ='instagram' /> 
-                    @connectingcreators
+                    @connectingcreators 
                 </div>
                 </a>
                 

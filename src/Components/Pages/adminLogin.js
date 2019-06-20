@@ -32,6 +32,7 @@ export default class AdminLogin extends Component {
           this.setState({
             loginEmail: '',
             loginPassword: '',
+            
     
           })
 
