@@ -18,16 +18,16 @@ export default class Podcasts extends Component {
 
 
     componentWillMount() {
-       try{
+        try {
 
-        axios.get('/api/podcasts/getall').then((res => {
-            this.setState({
-                podcasts: res.data
-            })
-        }))
-    } catch{
-        this.props.history.push('/podcasts')
-    }
+            axios.get('/api/podcasts/getall').then((res => {
+                this.setState({
+                    podcasts: res.data
+                })
+            }))
+        } catch{
+            this.props.history.push('/podcasts')
+        }
 
     }
     render() {
@@ -55,15 +55,17 @@ export default class Podcasts extends Component {
             <>
                 <div className={podcastStyles.pageView}>
 
-                    <div className={podcastStyles.titleText}>
+                   
+                     <div className={podcastStyles.titleText}>
                         <h1>Connecting Creators Podcast Series</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim eros eget urna accumsan luctus. Nulla porta lectus nisl, id vehicula lectus porttitor eget. Proin sagittis pharetra leo. Sed vehicula nulla id ultricies rutrum. Nam fringilla, nibh nec egestas ullamcorper, quam nulla vestibulum urna, nec gravida dolor odio quis diam. Quisque vel tristique ipsum, non scelerisque ipsum. Nunc et rutrum augue, ac pharetra dui. Morbi lobortis massa arcu, a ultrices magna tempus quis. Morbi id lorem nec mauris blandit consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in turpis accumsan, iaculis tortor vitae, laoreet sem.</p>
                     </div>
 
 
-                    <div className={podcastStyles.podcastContainer}>
-                        {podcasts}
-                    </div>
+                        <div className={podcastStyles.podcastContainer}>
+                            {podcasts}
+                        </div>
+            
                     <Footer />
                 </div>
 
