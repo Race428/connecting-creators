@@ -17,12 +17,18 @@ export default class Podcasts extends Component {
     }
 
 
-    componentDidMount() {
+    componentWillMount() {
+       try{
+
         axios.get('/api/podcasts/getall').then((res => {
             this.setState({
                 podcasts: res.data
             })
         }))
+    } catch{
+        this.props.history.push('/podcasts')
+    }
+
     }
     render() {
         const podcasts = this.state.podcasts.map((element, index) => {

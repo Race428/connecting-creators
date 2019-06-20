@@ -66,7 +66,7 @@ width: 100%;
 
 @media only screen and (max-width: 1100px) {
     .pageView {
-        padding-top: 6em;
+        padding-top: .5em;
     }
     h1 {
         font-size: 1em;
@@ -74,6 +74,15 @@ width: 100%;
     .podcastVideoWrapper {
         width: 100%;
         object-fit: cover;
+    }
+
+    .titleText{
+        width: 90vw;
+        margin-bottom: 1em;
+    }
+
+    p{
+        font-size: .8em;
     }
 }
 
