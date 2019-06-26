@@ -27,7 +27,7 @@ export default class LandingPage extends Component {
         return (
             <>
             
-           <h1>Connecting Creators is our website where we help those who are searching for a guide in the world of social media.</h1>
+           <h1>Connecting Creators is a community where creatives can network, learn, and grow.</h1>
            
            <div className={landingStyles.imageBox}>
             <img className={landingStyles.mike} src={hero} alt='mike' /> 
