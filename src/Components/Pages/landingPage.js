@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import landingStyles from '../../CSS/landingPage.module.css'
-import hero from '../Images/hero.JPG'
+import hero from '../Images/mike2.png'
 
 
 
