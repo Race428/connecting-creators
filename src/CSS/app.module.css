@@ -4,7 +4,7 @@ body{
 
 .app{
     width: 80vw;
-    height: 100vh;
+    height: calc(100vh - 15vh);
     /* overflow-x: hidden; */
     margin: auto;
   
