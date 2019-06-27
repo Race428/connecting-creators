@@ -17,7 +17,7 @@ export default class Podcasts extends Component {
     }
 
 
-    componentWillMount() {
+    componentDidMount() {
         try {
 
             axios.get('/api/podcasts/getall').then((res => {

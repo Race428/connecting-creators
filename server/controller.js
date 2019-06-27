@@ -66,6 +66,16 @@ module.exports ={
           res.status(200).send(data)
         }) 
 
-      }
+      },
+      deletePodcast: async (req, res) => {
+        const db = req.app.get('db')
+        const { podcast_id} = req.params
+    
+        await db.deletePodcast({ podcast_id }).then(result => {
+          res.status(200)
+    
+        })
+      },
+    
 
 }
