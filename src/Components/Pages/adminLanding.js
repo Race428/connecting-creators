@@ -25,17 +25,17 @@ export default class adminLandingPage extends Component {
     componentDidMount() {
 
 
-            axios.get('/api/podcasts/getall').then((res => {
-                this.setState({
-                    podcasts: res.data
-                })
-            }))
-        
+        axios.get('/api/podcasts/getall').then((res => {
+            this.setState({
+                podcasts: res.data
+            })
+        }))
+
 
     }
 
 
-   
+
 
     buttonToggle = (name, value) => {
         this.setState({ [name]: value })
@@ -113,13 +113,13 @@ export default class adminLandingPage extends Component {
         this.props.history.push('/adminLanding')
 
 
-        this.componentDidUpdate = () => {
-               axios.get('/api/podcasts/getall').then((res => {
-                this.setState({
-                    podcasts: res.data
-                })
-            }))
-        }
+        // this.componentDidUpdate = () => {
+        //     axios.get('/api/podcasts/getall').then((res => {
+        //         this.setState({
+        //             podcasts: res.data
+        //         })
+        //     }))
+        // }
     }
 
 
@@ -138,13 +138,13 @@ export default class adminLandingPage extends Component {
         return (
             <>
                 <div className={adminStyles.pageView}>
-
+                    <div className={adminStyles.dashHead}> <h2>Admin Dashboard</h2>
+                    </div>
                     <div className={adminStyles.dashboard}>
-                        <div className={adminStyles.dashHead}> <h2>Admin Dashboard</h2>
-                        </div>
+
                         <div className={adminStyles.podcastContainer}>
-                        <p>Podcast Titles</p>
-                        {podcasts}
+                            <p>Podcast Titles</p>
+                            {podcasts}
                         </div>
                     </div>
 
