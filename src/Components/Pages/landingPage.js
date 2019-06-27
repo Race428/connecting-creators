@@ -2,25 +2,16 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import landingStyles from '../../CSS/landingPage.module.css'
-import hero from '../Images/mike2.png'
+import hero from '../Images/pic.JPG'
 
 
 
 export default class LandingPage extends Component {
 
-    constructor() {
-        super()
-
-        this.state = {
-            podcasts: []
-        }
-    }
-
+ 
 
     
-    async componentDidMount() {
-        await axios.get('/api/podcasts/getall')
-    }
+
     render() {
       
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import navStyles from '../../CSS/nav.module.css'
 import {Link} from 'react-router-dom'
+import Logo from '../Images/logo.PNG'
 
 export default class Nav extends Component {
     render() {
@@ -8,7 +9,7 @@ export default class Nav extends Component {
             <>
             <nav>
                <Link to='/'>
-                <img className={navStyles.logo} src='https://static1.squarespace.com/static/5c10a2cafcf7fd0f32a876a7/t/5c79ae4d71c10b7dcaa7d564/1548658214654/' alt='logo' /> 
+                <img className={navStyles.logo} src={Logo} alt='logo' /> 
                 </Link>
                
                 <Link to='/podcasts'>
@@ -19,15 +20,15 @@ export default class Nav extends Component {
                 
                 <Link to=''>
                 <div className={navStyles.link}>
-                    Store
+                    Events
                 </div>
                 </Link>
                
-                <Link to=''>
+                {/* <Link to=''>
                 <div className={navStyles.link}>
                     About 
                 </div>
-                </Link>
+                </Link> */}
 
             </nav>
             </>
