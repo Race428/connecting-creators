@@ -3,14 +3,26 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import landingStyles from '../../CSS/landingPage.module.css'
 import hero from '../Images/pic.JPG'
+import {updatePodcasts} from '../../Redux/Reducer'
+
+import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
+
+
+class LandingPage extends Component {
 
 
 
-export default class LandingPage extends Component {
 
- 
-
+ componentDidMount(){
+    axios.get('/api/podcasts/getall').then((res => {
+      
+       this.props.updatePodcasts(res.data)
     
+    }))
+ }
+
+
 
     render() {
       
@@ -29,3 +41,17 @@ export default class LandingPage extends Component {
     }
 
 }
+
+
+
+const mapStateToProps =state=> {
+    return {
+        ...state 
+    }
+}
+
+const mapDispatchToProps = {
+    updatePodcasts
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LandingPage))

@@ -60,8 +60,8 @@ module.exports ={
         })
        
       },
-      getAllPodcasts: async (req, res) => { 
-        let db = await req.app.get('db')
+      getAllPodcasts:  (req, res) => { 
+        let db = req.app.get('db')
         db.getAllPodcasts().then((data) => {
           res.status(200).send(data)
         }) 
