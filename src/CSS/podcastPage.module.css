@@ -10,6 +10,9 @@
     margin-bottom: 14em;
     text-align: center;
 }
+.pageView p {
+    color: white;
+}
 
 .titleText {
     width: 70%;

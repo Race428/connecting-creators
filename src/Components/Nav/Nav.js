@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import navStyles from '../../CSS/nav.module.css'
 import {Link} from 'react-router-dom'
-import Logo from '../Images/logo.PNG'
+// import Logo from '../Images/logo.PNG'
 
 export default class Nav extends Component {
     render() {
@@ -9,7 +9,7 @@ export default class Nav extends Component {
             <>
             <nav>
                <Link to='/'>
-                <img className={navStyles.logo} src={Logo} alt='logo' /> 
+                <img className={navStyles.logo} src='https://achesonco.s3-us-west-1.amazonaws.com/WhiteConnecting.png ' alt='logo' /> 
                 </Link>
                
                 <Link to='/podcasts'>
