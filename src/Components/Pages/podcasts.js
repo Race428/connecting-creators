@@ -97,7 +97,7 @@ class Podcasts extends Component {
                         {/* {podcasts} */}
                         <iframe  title='title' id='iframe' src='https://www.youtube.com/embed/9jhgW-PQ7Xg'
                             height='345'
-                            width='520' allowFullScreen>
+                            width='320' allowFullScreen>
 
                         </iframe>
                         <br />

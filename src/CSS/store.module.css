@@ -1,0 +1,69 @@
+.pageView { 
+    background-color: white;
+    height: 100vh; 
+    width: 100vw;
+    overflow: hidden;
+
+}
+
+.pageLocation{
+width: 100%;
+height: 10%;
+background-color: grey;
+}
+
+.selections{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.packageDisplay{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    width: 70%;
+    height: 90%;
+    /* background-color: grey; */
+    border-right: solid 1px rgb(172, 172, 172);
+    float: left;
+}
+
+.optionContainer{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 30%;
+    height: 90%;
+    padding: 5em;
+    float: right;
+    /* background-color: rgb(195, 193, 193); */
+}
+
+.optionContainer h2 {
+    color: black;
+}
+
+.option{
+    width: 300px;
+    height: 5em;
+    border-radius: 60px;
+    /* background-color: grey; */
+    margin: 1em;
+    border: solid 1px black;
+    all: none;
+}
+
+
+.option-selected {
+    border-color: #007fff;
+    box-shadow: 0 0 0 2px #007fff;
+}
+
+
+
+.race{
+    height: 40px;
+    width: 50px;
+    background-color: blue;
+}
+

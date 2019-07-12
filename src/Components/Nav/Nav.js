@@ -18,11 +18,11 @@ export default class Nav extends Component {
                 </div>
                 </Link>
                 
-                {/* <Link to=''>
+                <Link to='/shop'>
                 <div className={navStyles.link}>
-                    Events
+                    Shop
                 </div>
-                </Link> */}
+                </Link>
                
                 {/* <Link to=''>
                 <div className={navStyles.link}>
