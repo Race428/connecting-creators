@@ -88,18 +88,19 @@ class Podcasts extends Component {
 
 
                     <div className={podcastStyles.titleText}>
-                        <h1>Connecting Creators Podcast Series</h1>
+                        <h1>Connecting Creators Interviews</h1>
                         <p>The Co-founders of Templemill Productions Mike Richy and Truman Mylin interview creators of all types from Photographers to Chefs. Listen to their conversations here to find constant inspiration and insight from industry leaders and low-key ballers.</p>
                     </div>
 
 
                     <div className={podcastStyles.podcastContainer}>
-                        {podcasts}
-                        {/* <iframe  title='title' id='iframe' src='https://www.youtube.com/embed/v191Y8AUk6w'
+                        {/* {podcasts} */}
+                        <iframe  title='title' id='iframe' src='https://www.youtube.com/embed/9jhgW-PQ7Xg'
                             height='345'
-                            width='420' allowFullScreen>
+                            width='520' allowFullScreen>
 
-                        </iframe> */}
+                        </iframe>
+                        <br />
                         <input onChange={e => this.textChange(e.target.value)} placeholder='iframe check'/> 
                         <button onClick={e => this.iframeClick()}>Click to change </button>
                     </div>

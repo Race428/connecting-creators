@@ -14,15 +14,15 @@ export default class Nav extends Component {
                
                 <Link to='/podcasts'>
                 <div className={navStyles.link}>
-                    Podcasts
+                    Interviews
                 </div>
                 </Link>
                 
-                <Link to=''>
+                {/* <Link to=''>
                 <div className={navStyles.link}>
                     Events
                 </div>
-                </Link>
+                </Link> */}
                
                 {/* <Link to=''>
                 <div className={navStyles.link}>
