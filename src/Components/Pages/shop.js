@@ -11,33 +11,61 @@ class Shop extends Component {
     constructor() {
         super()
         this.state = {
-            selected:''
+            package1: 'package1',
+            package2: 'package2',
+            package3: 'package3',
         }
     }
 
-
-
-    handleChange = (value) => {
+    package1Select = () => {
         this.setState({
-            selected: value
+            package1: style.selected,
+            package2: 'package2',
+            package3: 'package3',
+            selected: 'package1'
+        });
+  
+    }
+    package2Select = () => {
+        this.setState({
+            package1: 'package1',
+            package2: style.selected,
+            package3: 'package3',
+            selected: 'package2'
 
         });
-      
-       console.log(document.getElementById(`${this.state.selected}`))
-
     }
 
 
+    package3Select = () => {
+        this.setState({
+            package1: 'package1',
+            package2: 'package2',
+            package3: style.selected,
+            selected: 'package3'
+
+        });
+    }
+
+
+
+
+
+
+   
+
     handleSubmit = (event) => {
         event.preventDefault();
-        
+
 
         alert(`You chose the ${this.state.size} pizza.`);
     }
 
-    
+
 
     render() {
+
+
         return (
             <>
                 <div className={style.pageView}>
@@ -48,22 +76,23 @@ class Shop extends Component {
                             <h2>Select Your package</h2>
 
 
-                         <div id='package1' className={style.option}
-                         
-                         onClick={e => this.handleChange('package1')}
-                         
-                         >Package 1</div>
+                            <div id={`${this.state.package1}`} className={style.option}
 
-                         <div id='package2' className={style.option}
-                          onClick={e => this.handleChange('package2')}
+                                onClick={ this.package1Select}
 
-                          >Package 2</div>
+                            >Package 1</div>
 
-                         <div id='package3'
-                          onClick={e => this.handleChange('package3')}
-                         className={style.option}>Package 3</div>
+                            <div id={`${this.state.package2}`} className={style.option}
+                                onClick={this.package2Select}
 
-                     
+                            >Package 2</div>
+
+                            <div id={`${this.state.package3}`}
+                                onClick={this.package3Select}
+                                className={style.option}>Package 3</div>
+
+                            {/* <button onClick={this.reset}>Reset</button> */}
+
 
 
 

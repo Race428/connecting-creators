@@ -43,6 +43,7 @@ background-color: grey;
     color: black;
 }
 
+
 .option{
     width: 300px;
     height: 5em;
@@ -51,12 +52,16 @@ background-color: grey;
     margin: 1em;
     border: solid 1px black;
     all: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.option-selected {
+#selected {
     border-color: #007fff;
     box-shadow: 0 0 0 2px #007fff;
+    transition: all .5s ease-in-out;
 }
 
 
