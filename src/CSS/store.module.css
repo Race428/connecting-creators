@@ -1,23 +1,23 @@
-.pageView { 
+.pageView {
     background-color: white;
-    height: 100vh; 
+    height: 100vh;
     width: 100vw;
     overflow: hidden;
-
 }
 
-.pageLocation{
-width: 100%;
-height: 10%;
-background-color: grey;
+.pageLocation {
+    width: 100%;
+    height: 10%;
+    background-color: grey;
 }
 
-.selections{
+.selections {
     display: flex;
     width: 100%;
     height: 100%;
 }
-.packageDisplay{
+
+.packageDisplay {
     display: flex;
     /* flex-direction: column; */
     align-items: center;
@@ -28,7 +28,7 @@ background-color: grey;
     float: left;
 }
 
-.optionContainer{
+.optionContainer {
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -43,9 +43,8 @@ background-color: grey;
     color: black;
 }
 
-
-.option{
-    width: 300px;
+.option {
+    width: 40%;
     height: 5em;
     border-radius: 60px;
     /* background-color: grey; */
@@ -57,18 +56,52 @@ background-color: grey;
     align-items: center;
 }
 
-
 #selected {
     border-color: #007fff;
     box-shadow: 0 0 0 2px #007fff;
     transition: all .5s ease-in-out;
 }
 
-
-
-.race{
+.race {
     height: 40px;
     width: 50px;
     background-color: blue;
 }
 
+@media only screen and (max-width: 700px) {
+    .pageView{
+        /* overflow: scroll; */
+    }
+    .selections {
+        display: flex;
+        flex-direction: column;
+    }
+    .packageDisplay {
+        float: none;
+        width: 100%;
+    border-bottom: solid 1px rgb(172, 172, 172);
+
+    }
+    .optionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+
+    }
+
+    .option {
+        width: 60%;
+        height: 2.5em;
+        border-radius: 60px;
+        /* background-color: grey; */
+        margin: 1em;
+        border: solid 1px black;
+        all: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
