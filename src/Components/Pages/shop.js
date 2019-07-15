@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import style from '../../CSS/store.module.css'
-
-
+import PackageDisplay from '../PackageStore/packageDisplay'
+import { updatePackageSelection } from '../../Redux/Reducer'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 
 //add redux to update state with each new selection through the process. 
 
 class Shop extends Component {
+
+
 
     constructor() {
         super()
@@ -14,9 +18,17 @@ class Shop extends Component {
             package1: 'package1',
             package2: 'package2',
             package3: 'package3',
+            selected:''
         }
+
+        
     }
 
+    
+    
+    componentDidUpdate = () => { 
+        this.props.updatePackageSelection(this.state.selected)
+    }
     package1Select = () => {
         this.setState({
             package1: style.selected,
@@ -24,7 +36,11 @@ class Shop extends Component {
             package3: 'package3',
             selected: 'package1'
         });
+
+       
   
+
+
     }
     package2Select = () => {
         this.setState({
@@ -34,6 +50,9 @@ class Shop extends Component {
             selected: 'package2'
 
         });
+     
+
+        
     }
 
 
@@ -45,14 +64,14 @@ class Shop extends Component {
             selected: 'package3'
 
         });
+
+       
+
     }
 
 
 
-
-
-
-   
+    
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -71,14 +90,14 @@ class Shop extends Component {
                 <div className={style.pageView}>
                     <div className={style.pageLocation}></div>
                     <div className={style.selections}>
-                        <div className={style.packageDisplay}></div>
+                        <PackageDisplay />
                         <div className={style.optionContainer}>
                             <h2>Select Your package</h2>
 
 
                             <div id={`${this.state.package1}`} className={style.option}
 
-                                onClick={ this.package1Select}
+                                onClick={this.package1Select}
 
                             >Package 1</div>
 
@@ -105,4 +124,15 @@ class Shop extends Component {
     }
 }
 
-export default Shop
+const mapStateToProps =state=> {
+    return {
+        ...state 
+    }
+}
+
+
+const mapDispatchToProps = {
+    updatePackageSelection
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Shop))

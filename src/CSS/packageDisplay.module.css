@@ -1,0 +1,13 @@
+.pageView{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    width: 70%;
+    height: 90%;
+    /* background-color: grey; */
+    border-right: solid 1px rgb(172, 172, 172);
+    float: left;
+    background-color: grey;
+}
+
+

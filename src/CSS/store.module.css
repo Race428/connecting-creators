@@ -41,10 +41,11 @@
 
 .optionContainer h2 {
     color: black;
+    font-size: 3em;
 }
 
 .option {
-    width: 40%;
+    width: 80%;
     height: 5em;
     border-radius: 60px;
     /* background-color: grey; */
@@ -54,12 +55,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5em;
+
+
+}
+
+.option:hover { 
+    /* transition: .3s ease-in-out; */
+    border-color: #007fff;
+    box-shadow: 0 0 10px 2px #007fff;
+    
 }
 
 #selected {
     border-color: #007fff;
     box-shadow: 0 0 0 2px #007fff;
-    transition:  -webkit-transform all .5s ease-in-out;
+    /* background-color:#70a5da; */
+    /* transition: all .5s ease-in-out; */
+    /* -webkit-transition: all .5s ease-in-out; */
 }
 
 .race {
@@ -70,7 +83,7 @@
 
 @media only screen and (max-width: 700px) {
     .pageView{
-        overflow: scroll;
+        /* overflow: scroll; */
     }
     .selections {
         display: flex;
