@@ -59,7 +59,7 @@
 #selected {
     border-color: #007fff;
     box-shadow: 0 0 0 2px #007fff;
-    transition: all .5s ease-in-out;
+    transition:  -webkit-transform all .5s ease-in-out;
 }
 
 .race {
