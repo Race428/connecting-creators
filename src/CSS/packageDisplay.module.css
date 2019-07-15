@@ -7,7 +7,10 @@
     /* background-color: grey; */
     border-right: solid 1px rgb(172, 172, 172);
     float: left;
-    background-color: grey;
+    /* background-color: grey; */
 }
 
 
+.pageView h1 {
+    color: black;
+}
