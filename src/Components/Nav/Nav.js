@@ -18,7 +18,7 @@ export default class Nav extends Component {
                 </div>
                 </Link>
                 
-                <Link to='/shop'>
+                <Link to='/shop/select-package'>
                 <div className={navStyles.link}>
                     Shop
                 </div>

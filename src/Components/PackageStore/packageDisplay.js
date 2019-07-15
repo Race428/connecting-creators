@@ -8,6 +8,7 @@ import {withRouter} from 'react-router-dom'
 
 function PackageDiplay (props) { 
 
+    console.log( props.packageSelection)
     return <div className={style.pageView}>
 
 {
@@ -30,6 +31,29 @@ function PackageDiplay (props) {
 
 }
 
+
+{
+    props.detailSelection === 'detail1' ? 
+<h1>You have selected detail 1</h1> :
+<> </> 
+
+}
+{
+    props.detailSelection === 'detail2' ? 
+<h1>You have selected detail 2</h1> :
+<> </> 
+
+}
+
+{
+    props.detailSelection === 'detail3' ? 
+<h1>You have selected detail 3</h1> :
+<> </>
+
+
+
+
+}
     
     </div>
 }

@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import style from '../../CSS/store.module.css'
-import PackageDisplay from '../PackageStore/packageDisplay'
-import { updatePackageSelection } from '../../Redux/Reducer'
+import style from '../../../CSS/packageSelect.module.css'
+import PackageDisplay from '../../PackageStore/packageDisplay'
+import { updatePackageSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import  { Link} from 'react-router-dom'
 
 
 //add redux to update state with each new selection through the process. 
 
-class Shop extends Component {
+class Step1 extends Component {
 
 
 
@@ -18,13 +19,23 @@ class Shop extends Component {
             package1: 'package1',
             package2: 'package2',
             package3: 'package3',
-            selected:''
+            // selected:''
         }
 
         
     }
 
-    
+    componentDidMount() { 
+        if(this.props.packageSelection.length > 0) { 
+            var name = `${this.props.packageSelection}`
+ 
+    this.setState({
+        [name]: style.selected,
+        selected: `${name}`
+    })
+   
+    }
+}
     
     componentDidUpdate = () => { 
         this.props.updatePackageSelection(this.state.selected)
@@ -110,7 +121,9 @@ class Shop extends Component {
                                 onClick={this.package3Select}
                                 className={style.option}>Package 3</div>
 
-                            {/* <button onClick={this.reset}>Reset</button> */}
+                <Link to='/shop/select-details'>
+                            <button onClick={this.reset}>Next Step</button>
+                            </Link>
 
 
 
@@ -135,4 +148,4 @@ const mapDispatchToProps = {
     updatePackageSelection
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Shop))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step1))
