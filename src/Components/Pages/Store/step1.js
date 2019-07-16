@@ -5,6 +5,7 @@ import { updatePackageSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { NONAME } from 'dns';
 
 
 //add redux to update state with each new selection through the process. 
@@ -22,7 +23,7 @@ class Step1 extends Component {
             // selected:''
         }
 
-
+      
     }
 
     componentDidMount() {
@@ -92,8 +93,12 @@ class Step1 extends Component {
     }
 
 
+ 
+
 
     render() {
+
+
 
 
         return (
@@ -105,37 +110,63 @@ class Step1 extends Component {
                         <div className={style.currentDisplayContainer}>
 
                             <div className={style.currentDisplay}>
+                          
+                          
+                          
                             </div>
 
 
                         <PackageDisplay />
                         </div>
                         <div className={style.optionContainer}>
-                            <h2>Select Video Package</h2>
+                         
+                         
+                           <div className={style.optionButtons}>
+                               <h2>Select Video Package</h2>
+                           
+                           
+                           <div id={`${this.state.package1}`} className={style.option1}
+                           
+                           onClick={this.package1Select}
+                           
+                           >Video Series</div>
+                           
+                           <div id={`${this.state.package2}`} className={style.option2}
+                           onClick={this.package2Select}
+                           
+                           >Podcast</div>
+                           
+                           <div id={`${this.state.package3}`}
+                           onClick={this.package3Select}
+                           className={style.option3}>YouTube</div>
+                           
+                           
+                           </div>
+
+<div className={style.optionDescription}>
 
 
-                            <div id={`${this.state.package1}`} className={style.option}
+            <div id={style.videoDescription} >
+                <p>video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series video series 
+                </p>
+            </div>
 
-                                onClick={this.package1Select}
-
-                            >Video Series</div>
-
-                            <div id={`${this.state.package2}`} className={style.option}
-                                onClick={this.package2Select}
-
-                            >Podcast</div>
-
-                            <div id={`${this.state.package3}`}
-                                onClick={this.package3Select}
-                                className={style.option}>YouTube</div>
-
-                            <Link to='/shop/select-details'>
-                                <button onClick={this.reset}>Next Step</button>
-                            </Link>
+            <div id={style.podcastDescription} className={style.hiddenDescription}>
+                <p>podcast podcast podcast podcast podcast podcast v v  podcast podcast podcast podcast podcast podcast v v podcast podcast podcast podcast podcast podcast v v podcast podcast podcast podcast podcast podcast v v podcast podcast podcast podcast podcast podcast v v podcast podcast podcast podcast podcast podcast v v 
+                </p>
+            </div>
+            <div id={style.youtubeDescription} className={style.hiddenDescription}>
+                <p>youtube youtube youtube youtube v youtube outube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtubeoutube youtube youtube youtube v youtube
+                </p>
+            </div>
+    
 
 
+</div>
 
-
+                           <Link to='/shop/select-details'>
+                           <button onClick={this.reset}>Next Step</button>
+                           </Link>
 
                         </div>
                     </div>
