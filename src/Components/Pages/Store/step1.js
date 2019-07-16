@@ -103,23 +103,23 @@ class Step1 extends Component {
                     <div className={style.selections}>
                         <PackageDisplay />
                         <div className={style.optionContainer}>
-                            <h2>Select Your package</h2>
+                            <h2>Select Video Package</h2>
 
 
                             <div id={`${this.state.package1}`} className={style.option}
 
                                 onClick={this.package1Select}
 
-                            >Package 1</div>
+                            >Video Series</div>
 
                             <div id={`${this.state.package2}`} className={style.option}
                                 onClick={this.package2Select}
 
-                            >Package 2</div>
+                            >Podcast</div>
 
                             <div id={`${this.state.package3}`}
                                 onClick={this.package3Select}
-                                className={style.option}>Package 3</div>
+                                className={style.option}>YouTube</div>
 
                 <Link to='/shop/select-details'>
                             <button onClick={this.reset}>Next Step</button>
