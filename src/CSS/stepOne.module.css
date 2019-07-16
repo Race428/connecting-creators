@@ -17,26 +17,29 @@
     height: 100%;
 }
 
-.packageDisplay {
+.currentDisplayContainer{
     display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    width: 70%;
-    height: 90%;
-    /* background-color: grey; */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     border-right: solid 1px rgb(172, 172, 172);
-    float: left;
 }
+.currentDisplay{
+    display: flex;
+    width: 100%;
+    height: 75%;
+    border-right: solid 1px rgb(172, 172, 172);
+}
+
 
 .optionContainer {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     width: 30%;
     height: 90%;
     padding: 5em;
     float: right;
-    /* background-color: rgb(195, 193, 193); */
+
 }
 
 .optionContainer h2 {
@@ -48,7 +51,6 @@
     width: 80%;
     height: 5em;
     border-radius: 60px;
-    /* background-color: grey; */
     margin: 1em;
     border: solid 1px black;
     all: none;
@@ -61,7 +63,6 @@
 }
 
 .option:hover { 
-    /* transition: .3s ease-in-out; */
     border-color: #007fff;
     box-shadow: 0 0 10px 2px #007fff;
     

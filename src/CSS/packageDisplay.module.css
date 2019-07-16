@@ -1,13 +1,13 @@
 .pageView{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 70%;
-    height: 90%;
-    background-color: rgb(73, 211, 169);
+    width: 100%;
+    height: 25%;
     border-right: solid 1px rgb(172, 172, 172);
-    float: left;
-    /* background-color: grey; */
+    border-top: solid 1px rgb(172, 172, 172);
+
+    position: relative;
+    bottom:0;
 }
 
 
@@ -15,15 +15,8 @@
     color: black;
 }
 
-.currentPackageDisplay{
-    height: 80%;
-    width: 100%;
-    background-color: green;
-}
+
 .selectedOptionDetails{ 
-    background-color: blue;
-    height: 20%;
+    height: 100%;
     width: 100%;
-    position: relative;
-    bottom: 0;
 }

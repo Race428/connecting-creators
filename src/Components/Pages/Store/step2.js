@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import style from '../../../CSS/packageSelect.module.css'
+import style from '../../../CSS/stepOne.module.css'
 import PackageDisplay from '../../PackageStore/packageDisplay'
 import { updateDetailSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'

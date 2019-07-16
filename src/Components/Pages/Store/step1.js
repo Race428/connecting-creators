@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import style from '../../../CSS/packageSelect.module.css'
+import style from '../../../CSS/stepOne.module.css'
 import PackageDisplay from '../../PackageStore/packageDisplay'
 import { updatePackageSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import  { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 //add redux to update state with each new selection through the process. 
@@ -22,22 +22,22 @@ class Step1 extends Component {
             // selected:''
         }
 
-        
+
     }
 
-    componentDidMount() { 
-        if(this.props.packageSelection.length > 0) { 
+    componentDidMount() {
+        if (this.props.packageSelection.length > 0) {
             var name = `${this.props.packageSelection}`
- 
-    this.setState({
-        [name]: style.selected,
-        selected: `${name}`
-    })
-   
+
+            this.setState({
+                [name]: style.selected,
+                selected: `${name}`
+            })
+
+        }
     }
-}
-    
-    componentDidUpdate = () => { 
+
+    componentDidUpdate = () => {
         this.props.updatePackageSelection(this.state.selected)
     }
     package1Select = () => {
@@ -48,8 +48,8 @@ class Step1 extends Component {
             selected: 'package1'
         });
 
-       
-  
+
+
 
 
     }
@@ -61,9 +61,9 @@ class Step1 extends Component {
             selected: 'package2'
 
         });
-     
 
-        
+
+
     }
 
 
@@ -76,13 +76,13 @@ class Step1 extends Component {
 
         });
 
-       
+
 
     }
 
 
 
-    
+
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -101,7 +101,15 @@ class Step1 extends Component {
                 <div className={style.pageView}>
                     <div className={style.pageLocation}></div>
                     <div className={style.selections}>
+
+                        <div className={style.currentDisplayContainer}>
+
+                            <div className={style.currentDisplay}>
+                            </div>
+
+
                         <PackageDisplay />
+                        </div>
                         <div className={style.optionContainer}>
                             <h2>Select Video Package</h2>
 
@@ -121,8 +129,8 @@ class Step1 extends Component {
                                 onClick={this.package3Select}
                                 className={style.option}>YouTube</div>
 
-                <Link to='/shop/select-details'>
-                            <button onClick={this.reset}>Next Step</button>
+                            <Link to='/shop/select-details'>
+                                <button onClick={this.reset}>Next Step</button>
                             </Link>
 
 
@@ -137,9 +145,9 @@ class Step1 extends Component {
     }
 }
 
-const mapStateToProps =state=> {
+const mapStateToProps = state => {
     return {
-        ...state 
+        ...state
     }
 }
 
