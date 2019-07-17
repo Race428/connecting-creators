@@ -4,7 +4,8 @@ const initialState = {
     packageSelection: '',
     detailSelection: '',
     ratioSelection: '',
-    styleSelection: [],
+    styleSelection: '',
+    musicSelection:'',
     fontSelection: '',
     distributionSelection: [],
 
@@ -16,6 +17,8 @@ const UPDATE_PACKAGE_SELECTION = 'UPDATE_PACKAGE_SELECTION'
 const UPDATE_DETAIL_SELECTION = 'UPDATE_DETAIL_SELECTION'
 const UPDATE_RATIO_SELECTION = 'UPDATE_RATIO_SELECTION'
 const UPDATE_STYLE_SELECTION = 'UPDATE_STYLE_SELECTION'
+const UPDATE_MUSIC_SELECTION = 'UPDATE_MUSIC_SELECTION'
+
 const UPDATE_FONT_SELECTION = 'UPDATE_FONT_SELECTION'
 const UPDATE_DISTRIBUTION_SELECTION = 'UPDATE_DISTRIBUTION_SELECTION'
 
@@ -56,6 +59,13 @@ export function updateStyleSelection(styleSelection) {
         payload: styleSelection
     }
 }
+export function updateMusicSelection(musicSelection) {
+    return {
+        type: UPDATE_MUSIC_SELECTION,
+        payload: musicSelection
+    }
+}
+
 
 export function updateFontSelection(fontSelection) {
     return {
@@ -92,12 +102,19 @@ function Reducer(state = initialState, action) {
                 ...state,
                 ratioSelection: action.payload
             }
-        case UPDATE_STYLE_SELECTION:
+        
+            case UPDATE_STYLE_SELECTION:
             return {
                 ...state,
                 styleSelection: action.payload
             }
 
+            case UPDATE_MUSIC_SELECTION:
+                return {
+                    ...state,
+                    musicSelection: action.payload
+                }
+    
         case UPDATE_FONT_SELECTION:
             return {
                 ...state,

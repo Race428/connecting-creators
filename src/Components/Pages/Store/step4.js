@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, useCallback } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../../PackageStore/packageDisplay'
-import { updateStyleSelection } from '../../../Redux/Reducer'
+import { updateStyleSelection, updateMusicSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { object } from 'prop-types';
 
 
 //add redux to update state with each new selection through the process. 
@@ -17,78 +18,152 @@ class Step4 extends Component {
     constructor() {
         super()
         this.state = {
-            ratio1: 'ratio1',
-            ratio2: 'ratio2',
-            ratio3: 'ratio3',
+            option1: 'option1',
+            option2: 'option2',
+            option3: 'option3',
+            music1: 'music1',
+            music2: 'music2',
+            music3: 'music3',
+            selected: '',
+            musicSelected: ''
         }
 
 
     }
 
     componentDidMount() {
-        if (this.props.ratioSelection.length > 0) {
-            var name = `${this.props.ratioSelection}`
+        if (this.props.styleSelection.length > 0) {
+            var style = `${this.props.styleSelection}`
             this.setState({
-                [name]: style.selected,
-                selected: `${name}`
+                [style]: style.selected,
+                selected: `${style}`
             })
 
 
         }
-        console.log(this.state.selected)
+
+        if (this.props.musicSelection.length > 0) {
+            var music = `${this.props.styleSelection}`
+            this.setState({
+                [music]: style.selected,
+                musicSelected: `${music}`
+            })
+
+
+        }
+
 
     }
 
     componentDidUpdate = () => {
+      
+    }
+
+    // list of gigs 
+    // 6 - 12 months 
+    // how much for each gig 
+
+    // list of djs contractors you useCallback
+    // what you pay each. 
+
+
+    //
+
+
+
+
+
+
+
+
+    option1Select = async () => {
+        await this.setState({
+            option1: 'selected',
+            option2: 'option2',
+            option3: 'option3',
+            selected: 'option1',
+        });
+
         this.props.updateStyleSelection(this.state.selected)
 
     }
-    ratio1Select = async () => {
+
+
+
+    option2Select = async () => {
         await this.setState({
-            ratio1: 'selected',
-            ratio2: 'ratio2',
-            ratio3: 'ratio3',
-            selected: 'ratio1'
+            option1: 'option1',
+            option2: 'selected',
+            option3: 'option3',
+            selected: 'option2',
+
         });
+
+        this.props.updateStyleSelection(this.state.selected)
+
+
+
     }
 
 
-
-    ratio2Select = async () => {
+    option3Select = async () => {
         await this.setState({
-            ratio1: 'ratio1',
-            ratio2: 'selected',
-            ratio3: 'ratio3',
-            selected: 'ratio2'
+            option1: 'option1',
+            option2: 'option2',
+            option3: 'selected',
+            selected: 'option3',
 
         });
-
-
-
+        this.props.updateStyleSelection(this.state.selected)
 
     }
 
 
-    ratio3Select = () => {
-        this.setState({
-            ratio1: 'ratio1',
-            ratio2: 'ratio2',
-            ratio3: 'selected',
-            selected: 'ratio3'
-
+    music1Select = async () => {
+        await this.setState({
+            music1: 'selected',
+            music2: 'music2',
+            music3: 'music3',
+            musicSelected: 'music1',
         });
-
-
-
-
+        this.props.updateMusicSelection(this.state.musicSelected)
 
     }
 
 
 
+    music2Select = async () => {
+       await  this.setState({
+            music1: 'music1',
+            music2: 'selected',
+            music3: 'music3',
+            musicSelected: 'music2',
+
+        });
+        this.props.updateMusicSelection(this.state.musicSelected)
 
 
-   
+    }
+
+
+    music3Select =  async () => {
+        await this.setState({
+            music1: 'music1',
+            music2: 'music2',
+            music3: 'selected',
+            musicSelected: 'music3',
+
+        });
+        this.props.updateMusicSelection(this.state.musicSelected)
+
+
+    }
+
+
+
+
+
+
 
 
 
@@ -107,15 +182,15 @@ class Step4 extends Component {
                             <div className={style.currentDisplay}>
 
                                 {
-                                    this.state.selected === 'ratio1' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1920x.png' alt='fs' id='option1-image' name='option1-image' /> :
+                                    this.state.selected === 'option1' ?
+                                        <img src='https://www.denverpost.com/wp-content/uploads/2018/11/traffic_Denver_rj_09808.jpg?w=817' alt='fs' id='option1-image' name='option1-image' /> :
                                         <></>
-                                      
+
                                 }
 
                                 {
-                                    this.state.selected === 'ratio2' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1440p.png' alt='fs' id='option2-image' name='option2-image' /> :
+                                    this.state.selected === 'option2' ?
+                                        <img src='https://media.cntraveller.in/wp-content/uploads/2018/09/Tokyo-Shibuya-neon-lights-866x487.jpg' alt='fs' id='option2-image' name='option2-image' /> :
                                         <> </>
 
                                 }
@@ -123,9 +198,9 @@ class Step4 extends Component {
 
 
                                 {
-                                    this.state.selected === 'ratio3' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/4k.png' alt='fs' id='option3-image' name='option3-image' /> :
-                                       
+                                    this.state.selected === 'option3' ?
+                                        <img src='https://www.tripsavvy.com/thmb/M26q7v-vfonPlL7Zb-2D6wyMeBs=/950x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/space-needle-and-mt-rainier-at-dusk-in-seattle-965903630-5c3f86694cedfd0001316b8d.jpg' alt='fs' id='option3-image' name='option3-image' /> :
+
                                         <> </>
                                 }
 
@@ -139,28 +214,55 @@ class Step4 extends Component {
 
 
                             <div className={style.optionButtons}>
-                                <h2>Select Your Aspect Ratio</h2>
+                                <h2>Select Your Style and Color</h2>
 
 
-                                <div id={`${this.state.ratio1}`} className='option1'
+                                <div id={`${this.state.option1}`} className='option1'
 
-                                    onClick={this.ratio1Select}
+                                    onClick={this.option1Select}
 
-                                >1920 x 1018</div>
+                                >Denver</div>
 
-                                <div id={`${this.state.ratio2}`} className='option2'
-                                    onClick={this.ratio2Select}
+                                <div id={`${this.state.option2}`} className='option2'
+                                    onClick={this.option2Select}
 
-                                >Slightly Wider</div>
+                                >Tokyo</div>
 
-                                <div id={`${this.state.ratio3}`}
-                                    onClick={this.ratio3Select}
-                                    className='option3' >Widest (21x9)</div>
+                                <div id={`${this.state.option3}`}
+                                    onClick={this.option3Select}
+                                    className='option3'>Seattle</div>
 
 
                             </div>
 
                             <div className={style.optionDescription}>
+
+                                <h2>Select Your Music</h2>
+
+
+                                <div id={`${this.state.music1}`} className='option1'
+
+                                    onClick={this.music1Select}
+
+                                >Rap</div>
+
+                                <div id={`${this.state.music2}`} className='option2'
+                                    onClick={this.music2Select}
+
+                                >Country</div>
+
+                                <div id={`${this.state.music3}`}
+                                    onClick={this.music3Select}
+                                    className='option3'>Alt</div>
+
+
+
+
+
+
+
+
+
 
 
                                 {/* {
@@ -207,7 +309,7 @@ class Step4 extends Component {
 
                                 {
                                     this.state.selected ?
-                                        <Link to='/shop/select-font'>
+                                        <Link to='/shop/select-style'>
                                             <button className={style.button} onClick={this.reset}>Next Step</button>
                                         </Link> :
                                         <></>
@@ -233,7 +335,8 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = {
-    updateStyleSelection
+    updateStyleSelection,
+    updateMusicSelection
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step4))

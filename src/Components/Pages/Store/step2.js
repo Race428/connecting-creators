@@ -17,9 +17,11 @@ class Step2 extends Component {
     constructor() {
         super()
         this.state = {
-            detail1: 'detail1',
-            detail2: 'detail2',
-            detail3: 'detail3',
+           option1: 'option1',
+           option2: 'option2',
+           option3: 'option3',
+
+
             // selected: ''
         }
 
@@ -45,10 +47,11 @@ class Step2 extends Component {
     }
     package1Select = async() => {
       await  this.setState({
-            detail1: style.selected,
-            detail2: 'detail2',
-            detail3: 'detail3',
-            selected: 'detail1'
+            option1: style.selected,
+            option2: 'option2',
+            option3: 'option3',
+            selected: 'option1',
+
         });
 
 
@@ -58,10 +61,10 @@ class Step2 extends Component {
     }
     package2Select = () => {
         this.setState({
-            detail1: 'detail1',
-            detail2: style.selected,
-            detail3: 'detail3',
-            selected: 'detail2'
+            option1: 'option1',
+            option2: style.selected,
+            option3: 'option3',
+            selected: 'option2',
 
         });
 
@@ -72,10 +75,10 @@ class Step2 extends Component {
 
     package3Select = () => {
         this.setState({
-            detail1: 'detail1',
-            detail2: 'detail2',
-            detail3: style.selected,
-            selected: 'detail3'
+            option1: 'option1',
+            option2: 'option2',
+            option3: style.selected,
+            selected: 'option3',
 
         });
 
@@ -104,13 +107,13 @@ class Step2 extends Component {
                             <div className={style.currentDisplay}>
 
                                 {
-                                    this.state.selected === 'detail1' ?
+                                    this.state.selected === 'option1' ?
                                         <img src='https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option1-image' name='option1-image' /> :
                                         <></>
                                 }
 
                                 {
-                                    this.state.selected === 'detail2' ?
+                                    this.state.selected === 'option2' ?
                                         <img src='https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option2-image' name='option2-image' /> :
                                         <> </>
 
@@ -119,7 +122,7 @@ class Step2 extends Component {
 
 
                                 {
-                                    this.state.selected === 'detail3' ?
+                                    this.state.selected === 'option3' ?
                                         <img src=' https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option3-image' name='option3-image' /> :
                                         <> </>
                                 }
@@ -137,18 +140,18 @@ class Step2 extends Component {
                                 <h2>Select Package Duration</h2>
 
 
-                                <div id={`${this.state.detail1}`} className='option1'
+                                <div id={`${this.state.option1}`} className='option1'
 
                                     onClick={this.package1Select}
 
                                 >3 Months</div>
 
-                                <div id={`${this.state.detail2}`} className='option2'
+                                <div id={`${this.state.option2}`} className='option2'
                                     onClick={this.package2Select}
 
                                 >6 Months</div>
 
-                                <div id={`${this.state.detail3}`}
+                                <div id={`${this.state.option3}`}
                                     onClick={this.package3Select}
                                     className='option3' >12 Months</div>
 

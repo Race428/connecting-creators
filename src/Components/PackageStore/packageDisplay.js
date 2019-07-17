@@ -10,7 +10,7 @@ function PackageDiplay(props) {
 
 
     return <div className={style.pageView}>
-     
+
         <div className={style.selectedOptionDetails}>
             {
 
@@ -35,21 +35,46 @@ function PackageDiplay(props) {
 
 
             {
-                props.detailSelection === 'detail1' ?
+                props.detailSelection === 'option1' ?
                     <h1>You have selected 3 Months</h1> :
                     <> </>
 
             }
             {
-                props.detailSelection === 'detail2' ?
+                props.detailSelection === 'option2' ?
                     <h1>You have selected 6 Months</h1> :
                     <> </>
 
             }
 
             {
-                props.detailSelection === 'detail3' ?
+                props.detailSelection === 'option3' ?
                     <h1>You have selected 12 Months</h1> :
+                    <> </>
+
+
+
+
+            }
+
+
+
+            {
+                props.ratioSelection === 'option1' ?
+                    <h1>You have selected 1920x1080</h1> :
+                    <> </>
+
+            }
+            {
+                props.ratioSelection === 'option2' ?
+                    <h1>You have selected Wider</h1> :
+                    <> </>
+
+            }
+
+            {
+                props.ratioSelection === 'option3' ?
+                    <h1>You have selected Largest</h1> :
                     <> </>
 
 

@@ -20,3 +20,7 @@
     height: 100%;
     width: 100%;
 }
+
+.selectedOptionDetails h1{
+font-size: 1em;
+}

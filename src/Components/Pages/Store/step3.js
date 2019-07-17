@@ -17,9 +17,9 @@ class Step3 extends Component {
     constructor() {
         super()
         this.state = {
-            ratio1: 'ratio1',
-            ratio2: 'ratio2',
-            ratio3: 'ratio3',
+            option1: 'option1',
+            option2: 'option2',
+            option3: 'option3',
         }
 
 
@@ -45,10 +45,10 @@ class Step3 extends Component {
     }
     ratio1Select = async () => {
         await this.setState({
-            ratio1: 'selected',
-            ratio2: 'ratio2',
-            ratio3: 'ratio3',
-            selected: 'ratio1'
+            option1: style.selected,
+            option2: 'option2',
+            option3: 'option3',
+            selected: 'option1',
         });
     }
 
@@ -56,10 +56,10 @@ class Step3 extends Component {
 
     ratio2Select = async () => {
         await this.setState({
-            ratio1: 'ratio1',
-            ratio2: 'selected',
-            ratio3: 'ratio3',
-            selected: 'ratio2'
+            option1: 'option1',
+            option2: style.selected,
+            option3: 'option3',
+            selected: 'option2',
 
         });
 
@@ -71,10 +71,10 @@ class Step3 extends Component {
 
     ratio3Select = () => {
         this.setState({
-            ratio1: 'ratio1',
-            ratio2: 'ratio2',
-            ratio3: 'selected',
-            selected: 'ratio3'
+            option1: 'option1',
+            option2: 'option2',
+            option3: style.selected,
+            selected: 'option3',
 
         });
 
@@ -107,14 +107,14 @@ class Step3 extends Component {
                             <div className={style.currentDisplay}>
 
                                 {
-                                    this.state.selected === 'ratio1' ?
+                                    this.state.selected === 'option1' ?
                                         <img src='https://s3-us-west-1.amazonaws.com/achesonco/1920x.png' alt='fs' id='option1-image' name='option1-image' /> :
                                         <></>
                                       
                                 }
 
                                 {
-                                    this.state.selected === 'ratio2' ?
+                                    this.state.selected === 'option2' ?
                                         <img src='https://s3-us-west-1.amazonaws.com/achesonco/1440p.png' alt='fs' id='option2-image' name='option2-image' /> :
                                         <> </>
 
@@ -123,7 +123,7 @@ class Step3 extends Component {
 
 
                                 {
-                                    this.state.selected === 'ratio3' ?
+                                    this.state.selected === 'option3' ?
                                         <img src='https://s3-us-west-1.amazonaws.com/achesonco/4k.png' alt='fs' id='option3-image' name='option3-image' /> :
                                        
                                         <> </>
@@ -142,18 +142,18 @@ class Step3 extends Component {
                                 <h2>Select Your Aspect Ratio</h2>
 
 
-                                <div id={`${this.state.ratio1}`} className='option1'
+                                <div id={`${this.state.option1}`} className='option1'
 
                                     onClick={this.ratio1Select}
 
                                 >1920 x 1018</div>
 
-                                <div id={`${this.state.ratio2}`} className='option2'
+                                <div id={`${this.state.option2}`} className='option2'
                                     onClick={this.ratio2Select}
 
                                 >Slightly Wider</div>
 
-                                <div id={`${this.state.ratio3}`}
+                                <div id={`${this.state.option3}`}
                                     onClick={this.ratio3Select}
                                     className='option3' >Widest (21x9)</div>
 
