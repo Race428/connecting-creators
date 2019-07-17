@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../../PackageStore/packageDisplay'
-import { updateRatioSelection } from '../../../Redux/Reducer'
+import { updateDistributionSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -10,24 +10,26 @@ import { Link } from 'react-router-dom'
 
 //add redux to update state with each new selection through the process. 
 
-class Step3 extends Component {
+class Step6 extends Component {
 
 
 
     constructor() {
         super()
         this.state = {
-            option1: 'option1',
-            option2: 'option2',
-            option3: 'option3',
+            option1: false,
+            option2: false,
+            option3: false,
+            option4: false,
+            selectedOptions:[]
         }
 
 
     }
 
     componentDidMount() {
-        if (this.props.ratioSelection.length > 0) {
-            var name = `${this.props.ratioSelection}`
+        if (this.props.distributionSelection.length > 0) {
+            var name = `${this.props.distributionSelection}`
             this.setState({
                 [name]: style.selected,
                 selected: `${name}`
@@ -40,59 +42,158 @@ class Step3 extends Component {
     }
 
     componentDidUpdate = () => {
-        this.props.updateRatioSelection(this.state.selected)
+
+       
+
+        console.log(this.state.selectedOptions)
+        this.props.updateDistributionSelection(this.state.selected)
 
     }
+
+
+
+
+
+
     ratio1Select = async () => {
         await this.setState({
-            option1: style.selected,
-            option2: 'option2',
-            option3: 'option3',
-            selected: 'option1',
+            option1: !this.state.option1,
+
         });
+
+        if(this.state.option1 === true) { 
+          
+          var arr = [...this.state.selectedOptions, 'option1']
+        //   var array= arr.push('option1')
+        
+          this.setState({
+              selectedOptions: arr
+          })
+        } else { 
+           var array = [...this.state.selectedOptions]
+           var index = array.indexOf('option1')
+           if(index !== -1) array.splice(index, 1)
+           this.setState({
+               selectedOptions: array
+           })
+
+
+        }
+
+
     }
 
 
 
     ratio2Select = async () => {
         await this.setState({
-            option1: 'option1',
-            option2: style.selected,
-            option3: 'option3',
-            selected: 'option2',
+            option2: !this.state.option2,
 
         });
 
+        if(this.state.option2 === true) { 
+          
+          var arr = [...this.state.selectedOptions, 'option2']
+        //   var array= arr.push('option1')
+        
+          this.setState({
+              selectedOptions: arr
+          })
 
+        } else { 
+           var array = [...this.state.selectedOptions]
+           var index = array.indexOf('option2')
+           if(index !== -1) array.splice(index, 1)
+           this.setState({
+               selectedOptions: array
+           })
+
+
+        }
 
 
     }
 
 
-    ratio3Select = () => {
+    ratio3Select = async () => {
+        await this.setState({
+            option3: !this.state.option3,
+
+        });
+
+        if(this.state.option3 === true) { 
+          
+          var arr = [...this.state.selectedOptions, 'option3']
+        //   var array= arr.push('option1')
+        
+          this.setState({
+              selectedOptions: arr
+          })
+        } else { 
+           var array = [...this.state.selectedOptions]
+           var index = array.indexOf('option3')
+           if(index !== -1) array.splice(index, 1)
+           this.setState({
+               selectedOptions: array
+           })
+
+
+        }
+
+    }
+
+    ratio4Select = async () => {
+        await this.setState({
+            option4: !this.state.option4,
+
+        });
+
+        if(this.state.option4 === true) { 
+          
+          var arr = [...this.state.selectedOptions, 'option4']
+        //   var array= arr.push('option1')
+        
+          this.setState({
+              selectedOptions: arr
+          })
+        } else { 
+           var array = [...this.state.selectedOptions]
+           var index = array.indexOf('option4')
+           if(index !== -1) array.splice(index, 1)
+           this.setState({
+               selectedOptions: array
+           })
+
+
+        }
+
+    }
+
+    
+
+    
+
+    nextPage = () => {
+        if (this.state.selected === 'option4') {
+            window.alert('please type in name of custom font')
+        }
+
+        else {
+            this.props.history.push(`/shop/select-distribution-options`)
+        }
+    }
+
+
+    handleChange(value){ 
         this.setState({
-            option1: 'option1',
-            option2: 'option2',
-            option3: style.selected,
-            selected: 'option3',
-
-        });
-
-
-
-
-
+[value]: !this.state[value]
+        })
     }
 
 
 
 
-
-   
-
-
-
-
+    
 
     render() {
 
@@ -106,16 +207,16 @@ class Step3 extends Component {
 
                             <div className={style.currentDisplay}>
 
-                                {
+                            {
                                     this.state.selected === 'option1' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1920x.png' alt='fs' id='option1-image' name='option1-image' /> :
+                                        <img src='https://image.flaticon.com/icons/png/512/124/124010.png' alt='fs' id='option1-image' name='option1-image' /> :
                                         <></>
                                       
                                 }
 
                                 {
                                     this.state.selected === 'option2' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1440p.png' alt='fs' id='option2-image' name='option2-image' /> :
+                                        <img src='https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=300' alt='fs' id='option2-image' name='option2-image' /> :
                                         <> </>
 
                                 }
@@ -124,10 +225,18 @@ class Step3 extends Component {
 
                                 {
                                     this.state.selected === 'option3' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/4k.png' alt='fs' id='option3-image' name='option3-image' /> :
+                                        <img src='http://www.monomosaic.com/assets/instagram_stories-3b6065d0bec7679f8d71542a66fd40ff.png' alt='fs' id='option3-image' name='option3-image' /> :
                                        
                                         <> </>
                                 }
+                                 {
+                                    this.state.selected === 'option4' ?
+                                        <img src='https://i.gadgets360cdn.com/large/youtube_logo_new_official_1504077880072.jpg?output-quality=80' alt='fs' id='option3-image' name='option3-image' /> :
+                                       
+                                        <> </>
+                                }
+
+
 
 
                             </div>
@@ -139,28 +248,40 @@ class Step3 extends Component {
 
 
                             <div className={style.optionButtons}>
-                                <h2>Select Your Aspect Ratio</h2>
+                                <h2>Select Your Distribution</h2>
 
 
                                 <div id={`${this.state.option1}`} className='option1'
 
                                     onClick={this.ratio1Select}
 
-                                >1920 x 1018</div>
+                                >Facebook</div>
 
                                 <div id={`${this.state.option2}`} className='option2'
-                                    onClick={this.ratio2Select}
+                                   onClick={this.ratio2Select}
 
-                                >Slightly Wider</div>
+                                >Instagram</div>
 
                                 <div id={`${this.state.option3}`}
-                                    onClick={this.ratio3Select}
-                                    className='option3' >Widest (21x9)</div>
+                                   onClick={this.ratio3Select}
+                                    className='option3' >Instagram Highlights</div>
 
+
+                                <div id={`${this.state.option4}`}
+                                   onClick={this.ratio4Select}
+                                    
+                                    className='option4'>
+                                    YouTube Highlights
+                                    </div>
 
                             </div>
 
+
+
+
                             <div className={style.optionDescription}>
+
+
 
 
                                 {/* {
@@ -207,9 +328,11 @@ class Step3 extends Component {
 
                                 {
                                     this.state.selected ?
-                                        <Link to='/shop/select-style'>
-                                            <button className={style.button} onClick={this.reset}>Next Step</button>
-                                        </Link> :
+
+
+
+                                        <button className={style.button} onClick={this.nextPage}>Next Step</button>
+                                        :
                                         <></>
                                 }
 
@@ -233,7 +356,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = {
-    updateRatioSelection
+    updateDistributionSelection
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step3))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step6))

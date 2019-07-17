@@ -59,16 +59,7 @@ class Step4 extends Component {
       
     }
 
-    // list of gigs 
-    // 6 - 12 months 
-    // how much for each gig 
-
-    // list of djs contractors you useCallback
-    // what you pay each. 
-
-
-    //
-
+  
 
 
 

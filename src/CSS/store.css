@@ -93,6 +93,27 @@
     border-color: #007fff;
     box-shadow: 0 0 10px 2px #007fff;
 }
+
+
+
+
+.selectedoption4 {
+    width: 80%;
+    height: 2.5em;
+    border-radius: 60px;
+    margin: .3em;
+    border: solid 1px black;
+    all: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.seletedoption4:hover {
+    border-color: #007fff;
+    box-shadow: 0 0 10px 2px #007fff;
+}
 /* 
 
 #option1-image{

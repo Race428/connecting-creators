@@ -7,7 +7,7 @@ const initialState = {
     styleSelection: '',
     musicSelection:'',
     fontSelection: '',
-    distributionSelection: [],
+    distributionSelection: '',
 
 
 }
@@ -69,13 +69,13 @@ export function updateMusicSelection(musicSelection) {
 
 export function updateFontSelection(fontSelection) {
     return {
-        type: UPDATE_STYLE_SELECTION,
+        type: UPDATE_FONT_SELECTION,
         payload: fontSelection
     }
 }
 export function updateDistributionSelection(distributionSelection) {
     return {
-        type: UPDATE_STYLE_SELECTION,
+        type: UPDATE_DISTRIBUTION_SELECTION,
         payload: distributionSelection
     }
 }

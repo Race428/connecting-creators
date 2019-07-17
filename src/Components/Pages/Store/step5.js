@@ -98,7 +98,7 @@ class Step5 extends Component {
 
     }
 
-    fontType = (value) => {
+    fontType = (value) => { 
         this.setState({
             option1: 'option1',
             option2: 'option2',
@@ -111,15 +111,15 @@ class Step5 extends Component {
 
 
 
-    nextPage = () => {
-        if (this.state.selected === 'option4') {
-            window.alert('please type in name of custom font')
-        }
-
-        else {
-            this.props.history.push(`/shop/select-distribution-options`)
-        }
+nextPage = () => { 
+    if(this.state.selected === 'option4') { 
+        window.alert('please type in name of custom font')
     }
+
+    else { 
+        this.props.history.push(`/shop/select-distribution-options`)
+    }
+}
 
 
 
@@ -184,7 +184,7 @@ class Step5 extends Component {
                                         <> </>
                                 }
 
-
+                              
 
                             </div>
 
@@ -214,10 +214,10 @@ class Step5 extends Component {
                                     className='option3' >Barriecito</div>
 
 
-                                <div id={`${this.state.option4}`}
-                                    onClick={this.ratio4Select}
-                                    className='option4'>
-                                    Custom Font
+                            <div id={`${this.state.option4}`}
+                                onClick={this.ratio4Select}
+                                className='option4'>
+                                Custom Font
                                     </div>
 
                             </div>
@@ -274,10 +274,10 @@ class Step5 extends Component {
 
                                 {
                                     this.state.selected ?
-
-
-
-                                        <button className={style.button} onClick={this.nextPage}>Next Step</button>
+                                       
+                                       
+                                      
+                                            <button className={style.button} onClick={this.nextPage}>Next Step</button>
                                         :
                                         <></>
                                 }
