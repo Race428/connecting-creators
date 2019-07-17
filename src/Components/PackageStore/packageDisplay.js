@@ -15,20 +15,20 @@ function PackageDiplay(props) {
             {
 
                 props.packageSelection === 'package1' ?
-                    <h1>You have selected Package 1</h1> :
+                    <h1>You have selected Video Series Package</h1> :
                     <> </>
 
             }
             {
                 props.packageSelection === 'package2' ?
-                    <h1>You have selected Package 2</h1> :
+                    <h1>You have selected Podcast Package</h1> :
                     <> </>
 
             }
 
             {
                 props.packageSelection === 'package3' ?
-                    <h1>You have selected Package 3</h1> :
+                    <h1>You have selected YouTube Package</h1> :
                     <> </>
 
             }
@@ -36,20 +36,20 @@ function PackageDiplay(props) {
 
             {
                 props.detailSelection === 'detail1' ?
-                    <h1>You have selected detail 1</h1> :
+                    <h1>You have selected 3 Months</h1> :
                     <> </>
 
             }
             {
                 props.detailSelection === 'detail2' ?
-                    <h1>You have selected detail 2</h1> :
+                    <h1>You have selected 6 Months</h1> :
                     <> </>
 
             }
 
             {
                 props.detailSelection === 'detail3' ?
-                    <h1>You have selected detail 3</h1> :
+                    <h1>You have selected 12 Months</h1> :
                     <> </>
 
 

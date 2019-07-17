@@ -37,46 +37,13 @@ class Step1 extends Component {
 
 
         }
-console.log(this.state.selected)
+        console.log(this.state.selected)
 
     }
 
     componentDidUpdate = () => {
         this.props.updatePackageSelection(this.state.selected)
 
-        //         if(this.state.package1 === 'selected'){
-        //             console.log('hi')
-        //             var y = document.getElementsByName('option1-image');
-        //             y[0].setAttribute('id', 'option1-image-active');
-        //     }
-        //     else { 
-        //         var y = document.getElementsByName('option1-image');
-        //         y[0].setAttribute('id', 'option1-image');
-        //     }
-
-
-
-        //     if(this.state.package2 === 'selected'){
-
-        //         var y = document.getElementsByName('option2-image');
-        //         y[0].setAttribute('id', 'option2-image-active');
-        // }
-        // else { 
-        //     var y = document.getElementsByName('option2-image');
-        //     y[0].setAttribute('id', 'option2-image');
-        // }
-
-
-
-        // if(this.state.package3 === 'selected'){
-
-        //     var y = document.getElementsByName('option3-image');
-        //     y[0].setAttribute('id', 'option3-image-active');
-        // }
-        // else { 
-        // var y = document.getElementsByName('option3-image');
-        // y[0].setAttribute('id', 'option3-image');
-        // }
     }
     package1Select = async () => {
         await this.setState({
@@ -123,24 +90,13 @@ console.log(this.state.selected)
 
 
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-
-        alert(`You chose the ${this.state.size} pizza.`);
-    }
+   
 
 
 
 
 
     render() {
-
-        // if( this.state.selected === 'package1') { 
-        //     const image = 'series series series series series series series series series series series series series series series series series series series series series series series series series series'
-        // }
-
-
 
         return (
             <>
@@ -207,16 +163,29 @@ console.log(this.state.selected)
                             <div className={style.optionDescription}>
 
 
-                            {
+                                {
                                     this.state.selected === 'package1' ?
-                                       <p className={style.description}>series series series series series series series series series series series series series series series series series series series series series series series series series series </p>:
+                                        <div className={style.description}>
+                                            <h3>Our series package includes:</h3>
+                                            <ul>
+                                                <li>- 10 to 20 minute videos</li>
+                                                <li>- 3 videographers</li>
+                                                
+                                            </ul>
+                                         </div>:
                                         <></>
                                 }
 
                                 {
                                     this.state.selected === 'package2' ?
-                                    <p className={style.description}> Podcast Podcast Podcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast PodcastPodcast Podcast </p>  
-                                    :
+                                    <div className={style.description}>
+                                    <h3>Our Podcast package includes:</h3>
+                                    <ul>
+                                        <li>- 20 to 60 minute interviews</li>
+                                        <li>- Podcast studio for filiming</li>
+                                        <li>- 2 videographers</li>
+                                    </ul>
+                                 </div>:
                                         <> </>
 
                                 }
@@ -225,15 +194,28 @@ console.log(this.state.selected)
 
                                 {
                                     this.state.selected === 'package3' ?
-                                       <p className={style.description}>Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube Youtube </p>:
+                                    <div className={style.description}>
+                                    <h3>Our Youtube package includes:</h3>
+                                    <ul>
+                                        <li>- 5 to 10 minute videos</li>
+                                        <li>- Basic studeio set up</li>
+                                        <li>- Vlog style or educational channel</li>
+                                    </ul>
+                                 </div>:
                                         <> </>
+                                }
+
+                                {
+                                    this.state.selected ?
+                                        <Link to='/shop/select-details'>
+                                            <button className={style.button} onClick={this.reset}>Next Step</button>
+                                        </Link> :
+                                        <></>
                                 }
 
                             </div>
 
-                            <Link to='/shop/select-details'>
-                                <button onClick={this.reset}>Next Step</button>
-                            </Link>
+
 
                         </div>
                     </div>
