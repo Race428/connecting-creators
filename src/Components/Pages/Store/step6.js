@@ -207,7 +207,7 @@ class Step3 extends Component {
 
                                 {
                                     this.state.selected ?
-                                        <Link to='/shop/select-details'>
+                                        <Link to='/shop/checkout'>
                                             <button className={style.button} onClick={this.reset}>Next Step</button>
                                         </Link> :
                                         <></>
