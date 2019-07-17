@@ -2,82 +2,83 @@ import React, { Component } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../../PackageStore/packageDisplay'
-import { updateDetailSelection } from '../../../Redux/Reducer'
+import { updateRatioSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 //add redux to update state with each new selection through the process. 
 
-class Step2 extends Component {
+class Step3 extends Component {
 
 
 
     constructor() {
         super()
         this.state = {
-            detail1: 'detail1',
-            detail2: 'detail2',
-            detail3: 'detail3',
-            // selected: ''
+            ratio1: 'ratio1',
+            ratio2: 'ratio2',
+            ratio3: 'ratio3',
         }
 
 
     }
 
-    componentDidMount() { 
-        console.log(this.props)
-        if(this.props.detailSelection.length > 0) { 
-            var name = `${this.props.detailSelection}`
- 
-    this.setState({
-        [name]: style.selected,
-        selected: `${name}`
+    componentDidMount() {
+        if (this.props.ratioSelection.length > 0) {
+            var name = `${this.props.ratioSelection}`
+            this.setState({
+                [name]: style.selected,
+                selected: `${name}`
+            })
 
-    })
-   
+
+        }
+        console.log(this.state.selected)
+
     }
-}
 
     componentDidUpdate = () => {
-        this.props.updateDetailSelection(this.state.selected)
+        this.props.updateRatioSelection(this.state.selected)
+
     }
-    package1Select = async() => {
-      await  this.setState({
-            detail1: style.selected,
-            detail2: 'detail2',
-            detail3: 'detail3',
-            selected: 'detail1'
+    ratio1Select = async () => {
+        await this.setState({
+            ratio1: 'selected',
+            ratio2: 'ratio2',
+            ratio3: 'ratio3',
+            selected: 'ratio1'
+        });
+    }
+
+
+
+    ratio2Select = async () => {
+        await this.setState({
+            ratio1: 'ratio1',
+            ratio2: 'selected',
+            ratio3: 'ratio3',
+            selected: 'ratio2'
+
         });
 
 
 
 
-
     }
-    package2Select = () => {
+
+
+    ratio3Select = () => {
         this.setState({
-            detail1: 'detail1',
-            detail2: style.selected,
-            detail3: 'detail3',
-            selected: 'detail2'
+            ratio1: 'ratio1',
+            ratio2: 'ratio2',
+            ratio3: 'selected',
+            selected: 'ratio3'
 
         });
 
 
-
-    }
-
-
-    package3Select = () => {
-        this.setState({
-            detail1: 'detail1',
-            detail2: 'detail2',
-            detail3: style.selected,
-            selected: 'detail3'
-
-        });
 
 
 
@@ -88,10 +89,12 @@ class Step2 extends Component {
 
 
    
+
+
+
 
 
     render() {
-
 
         return (
             <>
@@ -104,14 +107,15 @@ class Step2 extends Component {
                             <div className={style.currentDisplay}>
 
                                 {
-                                    this.state.selected === 'detail1' ?
-                                        <img src='https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option1-image' name='option1-image' /> :
+                                    this.state.selected === 'ratio1' ?
+                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1920x.png' alt='fs' id='option1-image' name='option1-image' /> :
                                         <></>
+                                      
                                 }
 
                                 {
-                                    this.state.selected === 'detail2' ?
-                                        <img src='https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option2-image' name='option2-image' /> :
+                                    this.state.selected === 'ratio2' ?
+                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1440p.png' alt='fs' id='option2-image' name='option2-image' /> :
                                         <> </>
 
                                 }
@@ -119,8 +123,9 @@ class Step2 extends Component {
 
 
                                 {
-                                    this.state.selected === 'detail3' ?
-                                        <img src=' https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option3-image' name='option3-image' /> :
+                                    this.state.selected === 'ratio3' ?
+                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/4k.png' alt='fs' id='option3-image' name='option3-image' /> :
+                                       
                                         <> </>
                                 }
 
@@ -134,23 +139,23 @@ class Step2 extends Component {
 
 
                             <div className={style.optionButtons}>
-                                <h2>Select Package Duration</h2>
+                                <h2>Select Your Aspect Ratio</h2>
 
 
-                                <div id={`${this.state.detail1}`} className='option1'
+                                <div id={`${this.state.ratio1}`} className='option1'
 
-                                    onClick={this.package1Select}
+                                    onClick={this.ratio1Select}
 
-                                >3 Months</div>
+                                >1920 x 1018</div>
 
-                                <div id={`${this.state.detail2}`} className='option2'
-                                    onClick={this.package2Select}
+                                <div id={`${this.state.ratio2}`} className='option2'
+                                    onClick={this.ratio2Select}
 
-                                >6 Months</div>
+                                >Slightly Wider</div>
 
-                                <div id={`${this.state.detail3}`}
-                                    onClick={this.package3Select}
-                                    className='option3' >12 Months</div>
+                                <div id={`${this.state.ratio3}`}
+                                    onClick={this.ratio3Select}
+                                    className='option3' >Widest (21x9)</div>
 
 
                             </div>
@@ -158,8 +163,8 @@ class Step2 extends Component {
                             <div className={style.optionDescription}>
 
 
-                                {/* {
-                                    this.state.selected === 'detail1' ?
+                                {
+                                    this.state.selected === 'ratio1' ?
                                         <div className={style.description}>
                                             <h3>Our series package includes:</h3>
                                             <ul>
@@ -172,7 +177,7 @@ class Step2 extends Component {
                                 }
 
                                 {
-                                    this.state.selected === 'detail2' ?
+                                    this.state.selected === 'ratio2' ?
                                     <div className={style.description}>
                                     <h3>Our Podcast package includes:</h3>
                                     <ul>
@@ -188,7 +193,7 @@ class Step2 extends Component {
 
 
                                 {
-                                    this.state.selected === 'detail3' ?
+                                    this.state.selected === 'ratio3' ?
                                     <div className={style.description}>
                                     <h3>Our Youtube package includes:</h3>
                                     <ul>
@@ -198,11 +203,11 @@ class Step2 extends Component {
                                     </ul>
                                  </div>:
                                         <> </>
-                                } */}
+                                }
 
                                 {
                                     this.state.selected ?
-                                        <Link to='/shop/select-aspect-ratio'>
+                                        <Link to='/shop/select-details'>
                                             <button className={style.button} onClick={this.reset}>Next Step</button>
                                         </Link> :
                                         <></>
@@ -228,7 +233,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = {
-    updateDetailSelection
+    updateRatioSelection
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step2))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step3))

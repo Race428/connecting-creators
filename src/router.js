@@ -6,6 +6,8 @@ import AdminLanding from './Components/Pages/adminLanding'
 import Podcasts from './Components/Pages/podcasts'
 import Step1 from './Components/Pages/Store/step1'
 import Step2 from './Components/Pages/Store/step2'
+import Step3 from './Components/Pages/Store/step3'
+
 
 
 export default (
@@ -16,6 +18,8 @@ export default (
       <Route path='/podcasts' component={Podcasts} />
       <Route path='/shop/select-package' component={Step1} />
       <Route path='/shop/select-details' component={Step2} />
+      <Route path='/shop/select-aspect-ratio' component={Step3} />
+
 
 
 

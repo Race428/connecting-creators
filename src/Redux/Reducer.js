@@ -2,13 +2,17 @@ const initialState = {
 
     podcasts: [],
     packageSelection: '',
-    detailSelection: ''
+    detailSelection: '',
+    ratioSelection: '',
+
 
 }
 
 const UPDATE_PODCASTS = 'UPDATE_PODCASTS'
 const UPDATE_PACKAGE_SELECTION = 'UPDATE_PACKAGE_SELECTION'
 const UPDATE_DETAIL_SELECTION = 'UPDATE_DETAIL_SELECTION'
+const UPDATE_RATIO_SELECTION = 'UPDATE_RATIO_SELECTION'
+
 
 
 export function updatePodcasts(podcasts) {
@@ -30,6 +34,12 @@ export function updateDetailSelection(detailSelection) {
     }
 }
 
+export function updateRatioSelection(ratioSelection) {
+    return {
+        type: UPDATE_RATIO_SELECTION,
+        payload: ratioSelection
+    }
+}
 
 function Reducer(state = initialState, action) {
     switch (action.type) {
@@ -46,6 +56,11 @@ function Reducer(state = initialState, action) {
             return {
                 ...state,
                 detailSelection: action.payload
+            }
+        case UPDATE_RATIO_SELECTION:
+            return {
+                ...state,
+                ratioSelection: action.payload
             }
 
         default:
