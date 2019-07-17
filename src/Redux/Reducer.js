@@ -7,7 +7,7 @@ const initialState = {
     styleSelection: '',
     musicSelection:'',
     fontSelection: '',
-    distributionSelection: '',
+    distributionSelection: [],
 
 
 }

@@ -21,7 +21,7 @@ class Step6 extends Component {
             option2: false,
             option3: false,
             option4: false,
-            selectedOptions:[]
+            selectedOptions: []
         }
 
 
@@ -43,10 +43,10 @@ class Step6 extends Component {
 
     componentDidUpdate = () => {
 
-       
 
-        console.log(this.state.selectedOptions)
-        this.props.updateDistributionSelection(this.state.selected)
+
+        // console.log(this.state.selectedOptions)
+        this.props.updateDistributionSelection(this.state.selectedOptions)
 
     }
 
@@ -58,24 +58,24 @@ class Step6 extends Component {
     ratio1Select = async () => {
         await this.setState({
             option1: !this.state.option1,
-
+            selected: 'option1'
         });
 
-        if(this.state.option1 === true) { 
-          
-          var arr = [...this.state.selectedOptions, 'option1']
-        //   var array= arr.push('option1')
-        
-          this.setState({
-              selectedOptions: arr
-          })
-        } else { 
-           var array = [...this.state.selectedOptions]
-           var index = array.indexOf('option1')
-           if(index !== -1) array.splice(index, 1)
-           this.setState({
-               selectedOptions: array
-           })
+        if (this.state.option1 === true) {
+
+            var arr = [...this.state.selectedOptions, 'option1']
+            //   var array= arr.push('option1')
+
+            this.setState({
+                selectedOptions: arr
+            })
+        } else {
+            var array = [...this.state.selectedOptions]
+            var index = array.indexOf('option1')
+            if (index !== -1) array.splice(index, 1)
+            this.setState({
+                selectedOptions: array
+            })
 
 
         }
@@ -88,25 +88,26 @@ class Step6 extends Component {
     ratio2Select = async () => {
         await this.setState({
             option2: !this.state.option2,
+            selected: 'option2'
 
         });
 
-        if(this.state.option2 === true) { 
-          
-          var arr = [...this.state.selectedOptions, 'option2']
-        //   var array= arr.push('option1')
-        
-          this.setState({
-              selectedOptions: arr
-          })
+        if (this.state.option2 === true) {
 
-        } else { 
-           var array = [...this.state.selectedOptions]
-           var index = array.indexOf('option2')
-           if(index !== -1) array.splice(index, 1)
-           this.setState({
-               selectedOptions: array
-           })
+            var arr = [...this.state.selectedOptions, 'option2']
+            //   var array= arr.push('option1')
+
+            this.setState({
+                selectedOptions: arr
+            })
+
+        } else {
+            var array = [...this.state.selectedOptions]
+            var index = array.indexOf('option2')
+            if (index !== -1) array.splice(index, 1)
+            this.setState({
+                selectedOptions: array
+            })
 
 
         }
@@ -118,24 +119,26 @@ class Step6 extends Component {
     ratio3Select = async () => {
         await this.setState({
             option3: !this.state.option3,
+            selected: 'option3'
+
 
         });
 
-        if(this.state.option3 === true) { 
-          
-          var arr = [...this.state.selectedOptions, 'option3']
-        //   var array= arr.push('option1')
-        
-          this.setState({
-              selectedOptions: arr
-          })
-        } else { 
-           var array = [...this.state.selectedOptions]
-           var index = array.indexOf('option3')
-           if(index !== -1) array.splice(index, 1)
-           this.setState({
-               selectedOptions: array
-           })
+        if (this.state.option3 === true) {
+
+            var arr = [...this.state.selectedOptions, 'option3']
+            //   var array= arr.push('option1')
+
+            this.setState({
+                selectedOptions: arr
+            })
+        } else {
+            var array = [...this.state.selectedOptions]
+            var index = array.indexOf('option3')
+            if (index !== -1) array.splice(index, 1)
+            this.setState({
+                selectedOptions: array
+            })
 
 
         }
@@ -145,33 +148,35 @@ class Step6 extends Component {
     ratio4Select = async () => {
         await this.setState({
             option4: !this.state.option4,
+            selected: 'option4'
+
 
         });
 
-        if(this.state.option4 === true) { 
-          
-          var arr = [...this.state.selectedOptions, 'option4']
-        //   var array= arr.push('option1')
-        
-          this.setState({
-              selectedOptions: arr
-          })
-        } else { 
-           var array = [...this.state.selectedOptions]
-           var index = array.indexOf('option4')
-           if(index !== -1) array.splice(index, 1)
-           this.setState({
-               selectedOptions: array
-           })
+        if (this.state.option4 === true) {
+
+            var arr = [...this.state.selectedOptions, 'option4']
+            //   var array= arr.push('option1')
+
+            this.setState({
+                selectedOptions: arr
+            })
+        } else {
+            var array = [...this.state.selectedOptions]
+            var index = array.indexOf('option4')
+            if (index !== -1) array.splice(index, 1)
+            this.setState({
+                selectedOptions: array
+            })
 
 
         }
 
     }
 
-    
 
-    
+
+
 
     nextPage = () => {
         if (this.state.selected === 'option4') {
@@ -184,16 +189,10 @@ class Step6 extends Component {
     }
 
 
-    handleChange(value){ 
-        this.setState({
-[value]: !this.state[value]
-        })
-    }
 
 
 
 
-    
 
     render() {
 
@@ -207,15 +206,15 @@ class Step6 extends Component {
 
                             <div className={style.currentDisplay}>
 
-                            {
-                                    this.state.selected === 'option1' ?
+                                {
+                                    this.state.selected === 'option1' && this.state.selectedOptions.includes('option1') ?
                                         <img src='https://image.flaticon.com/icons/png/512/124/124010.png' alt='fs' id='option1-image' name='option1-image' /> :
                                         <></>
-                                      
+
                                 }
 
                                 {
-                                    this.state.selected === 'option2' ?
+                                    this.state.selected === 'option2' && this.state.selectedOptions.includes('option2') ?
                                         <img src='https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=300' alt='fs' id='option2-image' name='option2-image' /> :
                                         <> </>
 
@@ -224,15 +223,15 @@ class Step6 extends Component {
 
 
                                 {
-                                    this.state.selected === 'option3' ?
+                                    this.state.selected === 'option3' && this.state.selectedOptions.includes('option3') ?
                                         <img src='http://www.monomosaic.com/assets/instagram_stories-3b6065d0bec7679f8d71542a66fd40ff.png' alt='fs' id='option3-image' name='option3-image' /> :
-                                       
+
                                         <> </>
                                 }
-                                 {
-                                    this.state.selected === 'option4' ?
+                                {
+                                    this.state.selected === 'option4' && this.state.selectedOptions.includes('option4') ?
                                         <img src='https://i.gadgets360cdn.com/large/youtube_logo_new_official_1504077880072.jpg?output-quality=80' alt='fs' id='option3-image' name='option3-image' /> :
-                                       
+
                                         <> </>
                                 }
 
@@ -250,29 +249,82 @@ class Step6 extends Component {
                             <div className={style.optionButtons}>
                                 <h2>Select Your Distribution</h2>
 
+                                {
+                                    this.state.option1 ?
+                                        <div id='selected' className='option1'
 
-                                <div id={`${this.state.option1}`} className='option1'
+                                            onClick={this.ratio1Select}
 
-                                    onClick={this.ratio1Select}
+                                        >Facebook</div> :
+                                        <div id={`${this.state.option1}`} className='option1'
 
-                                >Facebook</div>
+                                            onClick={this.ratio1Select}
 
+                                        >Facebook</div>
+                                }
+   {
+                                    this.state.option2 ?
+                                    <div id='selected' className='option2'
+
+                                    onClick={this.ratio2Select}
+
+                                >Instagram</div>:
                                 <div id={`${this.state.option2}`} className='option2'
-                                   onClick={this.ratio2Select}
+
+                                onClick={this.ratio2Select}
+
+                            >Instagram</div>
+                                }
+                               
+
+                               {
+                                    this.state.option3 ?
+                                    <div id='selected' className='option3'
+
+                                    onClick={this.ratio3Select}
+
+                                >Instagram Stories</div>:
+                                <div id={`${this.state.option3}`} className='option3'
+
+                                onClick={this.ratio3Select}
+
+                            >Instagram Stories</div>
+                                }
+                               
+
+
+
+                               {
+                                    this.state.option4 ?
+                                    <div id='selected' className='option4'
+
+                                    onClick={this.ratio4Select}
+
+                                >YouTube Highlights</div>:
+                                <div id={`${this.state.option4}`} className='option4'
+
+                                onClick={this.ratio4Select}
+
+                            >YouTube Highlights</div>
+                                }
+                               
+
+                                {/* <div id={`${this.state.option2}`} className='option2'
+                                    onClick={this.ratio2Select}
 
                                 >Instagram</div>
 
                                 <div id={`${this.state.option3}`}
-                                   onClick={this.ratio3Select}
+                                    onClick={this.ratio3Select}
                                     className='option3' >Instagram Highlights</div>
 
 
                                 <div id={`${this.state.option4}`}
-                                   onClick={this.ratio4Select}
-                                    
+                                    onClick={this.ratio4Select}
+
                                     className='option4'>
                                     YouTube Highlights
-                                    </div>
+                                    </div> */}
 
                             </div>
 
