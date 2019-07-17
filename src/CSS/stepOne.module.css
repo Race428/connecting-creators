@@ -17,14 +17,15 @@
     height: 100%;
 }
 
-.currentDisplayContainer{
+.currentDisplayContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     border-right: solid 1px rgb(172, 172, 172);
 }
-.currentDisplay{
+
+.currentDisplay {
     display: flex;
     width: 100%;
     height: 75%;
@@ -32,13 +33,6 @@
     justify-content: center;
     align-items: center;
 }
-
-.currentDisplay img{
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-}
-
 
 .optionContainer {
     display: flex;
@@ -49,18 +43,18 @@
     /* padding: 1em; */
     float: right;
     background-color: rgb(202, 202, 202);
-
 }
 
-.description { 
+.description {
     margin: 2em;
     text-align: left;
 }
 
 .description li {
-list-style: none;
+    list-style: none;
 }
-.optionDescription{
+
+.optionDescription {
     height: 60%;
     width: 100%;
     border-top: 1px solid grey;
@@ -68,26 +62,21 @@ list-style: none;
     flex-direction: column;
     align-items: center;
     margin: 2em;
-    
 }
 
-.optionButtons{
+.optionButtons {
     height: 40%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
-
 }
 
 .optionContainer h2 {
     color: black;
     font-size: 3em;
 }
-
-
 
 .option1 {
     width: 80%;
@@ -100,16 +89,12 @@ list-style: none;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
-
-
 }
 
-.option1:hover { 
+.option1:hover {
     border-color: #007fff;
     box-shadow: 0 0 10px 2px #007fff;
-    
-} 
-
+}
 
 .option2 {
     width: 80%;
@@ -122,11 +107,9 @@ list-style: none;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
-
-
 }
 
-.option2:hover { 
+.option2:hover {
     border-color: #007fff;
     box-shadow: 0 0 10px 2px #007fff;
 }
@@ -142,14 +125,31 @@ list-style: none;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
-
-
 }
 
-.option3:hover{ 
+.option3:hover {
     border-color: #007fff;
     box-shadow: 0 0 10px 2px #007fff;
 }
+
+.option4 {
+    width: 80%;
+    height: 2.5em;
+    border-radius: 60px;
+    margin: .3em;
+    border: solid 1px black;
+    all: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.option4:hover {
+    border-color: #007fff;
+    box-shadow: 0 0 10px 2px #007fff;
+}
+
 #selected {
     border-color: #007fff;
     box-shadow: 0 0 0 2px #007fff;
@@ -158,29 +158,21 @@ list-style: none;
     /* -webkit-transition: all .5s ease-in-out; */
 }
 
-
-
-
-
-.hiddenDescription{
+.hiddenDescription {
     display: none;
 }
-
 
 /* .hiddenDescription:hover{
  display: inline;   
 } */
 
-
-.button { 
+.button {
     height: 5em;
     width: 15em;
     /* background-color: black; */
     position: static;
     /* left: 0; */
     /* right: 0; */
-
-    
     bottom: 2em;
     margin: auto;
     border-radius: 60px;
@@ -189,17 +181,83 @@ list-style: none;
     color: white;
     font-weight: bold;
     font-size: 1em;
-
-
 }
 
-.button:hover{
+.button:hover {
     background-color: #3452b3;
     /* box-shadow: 0 0 10px 2px #007fff; */
 }
 
+.font1 {
+    font-family: 'Heebo', sans-serif;
+    color: black;
+}
+
+.font2 {
+    font-family: 'Lora', serif;
+    color: black;
+}
+
+.font3 {
+    font-family: 'Barriecito', cursive;
+    color: black;
+}
+
+.fontCustom {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(177, 177, 224); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fontCustom input {
+    height: 3em;
+    width: 20em;
+    color: black;
+    border-radius: 60px;
+    padding-left: 1em;
+    border-color: #007fff;
+    
+}
+
+
+.fontCustom input:focus{
+    outline: none;
+}
+.fontCustom ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1;
+    /* Firefox */
+    font-size: 1em;
+    font-weight: bold;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.fontCustom a{
+    color: rgb(148, 134, 134);
+    cursor: pointer;
+    /* color: blue; */
+}
+
 @media only screen and (max-width: 700px) {
-    .pageView{
+    .pageView {
         /* overflow: scroll; */
     }
     .selections {
@@ -209,8 +267,7 @@ list-style: none;
     .packageDisplay {
         float: none;
         width: 100%;
-    border-bottom: solid 1px rgb(172, 172, 172);
-
+        border-bottom: solid 1px rgb(172, 172, 172);
     }
     .optionContainer {
         display: flex;
@@ -219,9 +276,7 @@ list-style: none;
         align-items: center;
         width: 100%;
         padding: 0;
-
     }
-
     .option {
         width: 60%;
         height: 2.5em;
@@ -235,4 +290,3 @@ list-style: none;
         align-items: center;
     }
 }
-
