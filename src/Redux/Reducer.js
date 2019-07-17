@@ -4,6 +4,9 @@ const initialState = {
     packageSelection: '',
     detailSelection: '',
     ratioSelection: '',
+    styleSelection: [],
+    fontSelection: '',
+    distributionSelection: [],
 
 
 }
@@ -12,6 +15,12 @@ const UPDATE_PODCASTS = 'UPDATE_PODCASTS'
 const UPDATE_PACKAGE_SELECTION = 'UPDATE_PACKAGE_SELECTION'
 const UPDATE_DETAIL_SELECTION = 'UPDATE_DETAIL_SELECTION'
 const UPDATE_RATIO_SELECTION = 'UPDATE_RATIO_SELECTION'
+const UPDATE_STYLE_SELECTION = 'UPDATE_STYLE_SELECTION'
+const UPDATE_FONT_SELECTION = 'UPDATE_FONT_SELECTION'
+const UPDATE_DISTRIBUTION_SELECTION = 'UPDATE_DISTRIBUTION_SELECTION'
+
+
+
 
 
 
@@ -41,6 +50,27 @@ export function updateRatioSelection(ratioSelection) {
     }
 }
 
+export function updateStyleSelection(styleSelection) {
+    return {
+        type: UPDATE_STYLE_SELECTION,
+        payload: styleSelection
+    }
+}
+
+export function updateFontSelection(fontSelection) {
+    return {
+        type: UPDATE_STYLE_SELECTION,
+        payload: fontSelection
+    }
+}
+export function updateDistributionSelection(distributionSelection) {
+    return {
+        type: UPDATE_STYLE_SELECTION,
+        payload: distributionSelection
+    }
+}
+
+
 function Reducer(state = initialState, action) {
     switch (action.type) {
         case UPDATE_PODCASTS:
@@ -61,6 +91,22 @@ function Reducer(state = initialState, action) {
             return {
                 ...state,
                 ratioSelection: action.payload
+            }
+        case UPDATE_STYLE_SELECTION:
+            return {
+                ...state,
+                styleSelection: action.payload
+            }
+
+        case UPDATE_FONT_SELECTION:
+            return {
+                ...state,
+                fontSelection: action.payload
+            }
+        case UPDATE_DISTRIBUTION_SELECTION:
+            return {
+                ...state,
+                distributionSelection: action.payload
             }
 
         default:

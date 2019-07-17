@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../../PackageStore/packageDisplay'
-import { updateRatioSelection } from '../../../Redux/Reducer'
+import { updateStyleSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 //add redux to update state with each new selection through the process. 
 
-class Step3 extends Component {
+class Step4 extends Component {
 
 
 
@@ -40,7 +40,7 @@ class Step3 extends Component {
     }
 
     componentDidUpdate = () => {
-        this.props.updateRatioSelection(this.state.selected)
+        this.props.updateStyleSelection(this.state.selected)
 
     }
     ratio1Select = async () => {
@@ -233,7 +233,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = {
-    updateRatioSelection
+    updateStyleSelection
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step3))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step4))

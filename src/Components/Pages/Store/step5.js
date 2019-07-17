@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../../PackageStore/packageDisplay'
-import { updateRatioSelection } from '../../../Redux/Reducer'
+import { updateFontSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -40,7 +40,7 @@ class Step3 extends Component {
     }
 
     componentDidUpdate = () => {
-        this.props.updateRatioSelection(this.state.selected)
+        this.props.updateFontSelection(this.state.selected)
 
     }
     ratio1Select = async () => {
@@ -233,7 +233,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = {
-    updateRatioSelection
+    updateFontSelection
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step3))
