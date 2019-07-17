@@ -74,7 +74,7 @@
 }
 
 
-
+/* 
 
 #option1-image{
     display: none;
@@ -83,9 +83,7 @@
 #option1-image:active{
     display: block;
 }
-/* #option1-image:disabled{
-    display: block;
-} */
+
 
 
 
@@ -105,4 +103,4 @@
 
 #option3-image:active{
     display: block;
-}
+} */
