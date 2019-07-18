@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import PageLocation from '../Store/StoreComponents/pageLocation'
+import BottomBar from '../Store/StoreComponents/bottomBar'
 //add redux to update state with each new selection through the process. 
 
 class Step1 extends Component {
@@ -20,30 +21,37 @@ class Step1 extends Component {
             package1: 'package1',
             package2: 'package2',
             package3: 'package3',
+            // selected:'package1'
 
             // selected:''
         }
 
 
     }
-    
- 
-   
-    componentDidMount()  {
-        
-        
+
+
+
+    componentDidMount() {
+
+
         if (this.props.packageSelection.length > 0) {
             var name = `${this.props.packageSelection}`
             this.setState({
                 [name]: style.selected,
                 selected: `${name}`
+            })         
+
+
+        }   else { 
+            this.setState({
+                package1:'selected',
+                selected:'package1'
             })
-            
-            
         }
-    
-        
-       
+
+
+
+
     }
 
     componentDidUpdate = () => {
@@ -95,7 +103,7 @@ class Step1 extends Component {
 
 
 
-   
+
 
 
 
@@ -107,10 +115,10 @@ class Step1 extends Component {
             <>
                 <div className={style.pageView}>
                     <div className={style.pageLocation}>
-                    <PageLocation />
+                        <PageLocation />
 
                     </div>
-                    
+
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>
@@ -142,7 +150,6 @@ class Step1 extends Component {
                             </div>
 
 
-                            <PackageDisplay />
                         </div>
                         <div className={style.optionContainer}>
 
@@ -179,22 +186,22 @@ class Step1 extends Component {
                                             <ul>
                                                 <li>- 10 to 20 minute videos</li>
                                                 <li>- 3 videographers</li>
-                                                
+
                                             </ul>
-                                         </div>:
+                                        </div> :
                                         <></>
                                 }
 
                                 {
                                     this.state.selected === 'package2' ?
-                                    <div className={style.description}>
-                                    <h3>Our Podcast package includes:</h3>
-                                    <ul>
-                                        <li>- 20 to 60 minute interviews</li>
-                                        <li>- Podcast studio for filiming</li>
-                                        <li>- 2 videographers</li>
-                                    </ul>
-                                 </div>:
+                                        <div className={style.description}>
+                                            <h3>Our Podcast package includes:</h3>
+                                            <ul>
+                                                <li>- 20 to 60 minute interviews</li>
+                                                <li>- Podcast studio for filiming</li>
+                                                <li>- 2 videographers</li>
+                                            </ul>
+                                        </div> :
                                         <> </>
 
                                 }
@@ -203,14 +210,14 @@ class Step1 extends Component {
 
                                 {
                                     this.state.selected === 'package3' ?
-                                    <div className={style.description}>
-                                    <h3>Our Youtube package includes:</h3>
-                                    <ul>
-                                        <li>- 5 to 10 minute videos</li>
-                                        <li>- Basic studeio set up</li>
-                                        <li>- Vlog style or educational channel</li>
-                                    </ul>
-                                 </div>:
+                                        <div className={style.description}>
+                                            <h3>Our Youtube package includes:</h3>
+                                            <ul>
+                                                <li>- 5 to 10 minute videos</li>
+                                                <li>- Basic studeio set up</li>
+                                                <li>- Vlog style or educational channel</li>
+                                            </ul>
+                                        </div> :
                                         <> </>
                                 }
 
@@ -227,6 +234,10 @@ class Step1 extends Component {
 
 
                         </div>
+                    </div>
+                    <div className={style.pageLocation}>
+                    <PackageDisplay />
+                      
                     </div>
                 </div>
             </>
