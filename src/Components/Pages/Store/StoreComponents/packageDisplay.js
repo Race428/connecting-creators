@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../../CSS/packageDisplay.module.css'
+import style from '../../../../CSS/packageDisplay.module.css'
 // import {updatePackageSelection} from '../../Redux/Reducer'
 
 import { connect } from 'react-redux'

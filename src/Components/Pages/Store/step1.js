@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
-import PackageDisplay from '../../PackageStore/packageDisplay'
+import PackageDisplay from '../Store/StoreComponents/packageDisplay'
+
 import { updatePackageSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-
+import PageLocation from '../Store/StoreComponents/pageLocation'
 
 //add redux to update state with each new selection through the process. 
 
@@ -101,7 +102,7 @@ class Step1 extends Component {
         return (
             <>
                 <div className={style.pageView}>
-                    <div className={style.pageLocation}></div>
+                    <PageLocation />
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>

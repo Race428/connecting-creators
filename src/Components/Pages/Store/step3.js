@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
-import PackageDisplay from '../../PackageStore/packageDisplay'
+import PackageDisplay from '../Store/StoreComponents/packageDisplay'
+
 import { updateRatioSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'

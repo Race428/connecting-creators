@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
-import PackageDisplay from '../../PackageStore/packageDisplay'
+import PackageDisplay from '../Store/StoreComponents/packageDisplay'
+
 import { updateDistributionSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 //add redux to update state with each new selection through the process. 
@@ -184,7 +185,7 @@ class Step6 extends Component {
         }
 
         else {
-            this.props.history.push(`/shop/select-distribution-options`)
+            this.props.history.push(`/shop/checkout`)
         }
     }
 
