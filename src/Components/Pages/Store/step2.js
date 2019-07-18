@@ -3,10 +3,11 @@ import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../Store/StoreComponents/packageDisplay'
 
-import { updateDetailSelection } from '../../../Redux/Reducer'
+import { updateDetailSelection, updatePageNumber } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link} from 'react-router-dom'
+import PageLocation from '../Store/StoreComponents/pageLocation'
 
 
 //add redux to update state with each new selection through the process. 
@@ -15,8 +16,8 @@ class Step2 extends Component {
 
 
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
            option1: 'option1',
            option2: 'option2',
@@ -29,23 +30,31 @@ class Step2 extends Component {
 
     }
 
-    componentDidMount() { 
-        console.log(this.props)
+    componentDidMount = async () => { 
+
+        
+        
         if(this.props.detailSelection.length > 0) { 
             var name = `${this.props.detailSelection}`
- 
-    this.setState({
-        [name]: style.selected,
-        selected: `${name}`
+            
+            this.setState({
+                [name]: style.selected,
+                selected: `${name}`
+                
+            })
+            
+        }
+        // await this.props.updatePageNumber('/shop/select-details')
 
-    })
-   
-    }
 }
 
     componentDidUpdate = () => {
         this.props.updateDetailSelection(this.state.selected)
     }
+
+
+
+    
     package1Select = async() => {
       await  this.setState({
             option1: style.selected,
@@ -100,7 +109,10 @@ class Step2 extends Component {
         return (
             <>
                 <div className={style.pageView}>
-                    <div className={style.pageLocation}></div>
+                    <div className={style.pageLocation}>
+                    <PageLocation />
+
+                    </div>
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>
@@ -232,7 +244,8 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = {
-    updateDetailSelection
+    updateDetailSelection,
+    updatePageNumber
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step2))

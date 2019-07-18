@@ -6,7 +6,8 @@ import PackageDisplay from '../Store/StoreComponents/packageDisplay'
 import { updateFontSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-// import { Link } from 'react-router-dom'
+import PageLocation from '../Store/StoreComponents/pageLocation'
+
 
 
 //add redux to update state with each new selection through the process. 
@@ -37,7 +38,7 @@ class Step5 extends Component {
 
 
         }
-        console.log(this.state.selected)
+       
 
     }
 
@@ -132,7 +133,10 @@ nextPage = () => {
         return (
             <>
                 <div className={style.pageView}>
-                    <div className={style.pageLocation}></div>
+                    <div className={style.pageLocation}>
+                    <PageLocation />
+
+                    </div>
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>

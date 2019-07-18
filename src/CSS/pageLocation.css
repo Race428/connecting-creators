@@ -1,0 +1,45 @@
+.locationPageView{
+    display: flex;
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    /* top:10%; */
+    /* position: fixed; */
+}
+
+
+
+.locationPageView div{
+    width: 14.28%;
+    height: 100%;
+/* background-color: red; */
+/* border:1px solid black; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+
+
+
+.navLink{
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+
+.navLinkSelected{
+    box-shadow: inset 0 -5px 0 -1px #007fff;
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+
+}
+

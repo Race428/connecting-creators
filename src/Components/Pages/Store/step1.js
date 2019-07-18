@@ -3,7 +3,7 @@ import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../Store/StoreComponents/packageDisplay'
 
-import { updatePackageSelection } from '../../../Redux/Reducer'
+import { updatePackageSelection, updatePageNumber } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -29,21 +29,21 @@ class Step1 extends Component {
     
  
    
-    componentDidMount() {
-      
-       
-
+    componentDidMount()  {
+        
+        
         if (this.props.packageSelection.length > 0) {
             var name = `${this.props.packageSelection}`
             this.setState({
                 [name]: style.selected,
                 selected: `${name}`
             })
-
-
+            
+            
         }
-        console.log(this.state.selected)
-
+    
+        
+       
     }
 
     componentDidUpdate = () => {
@@ -242,7 +242,8 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = {
-    updatePackageSelection
+    updatePackageSelection,
+    updatePageNumber
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step1))

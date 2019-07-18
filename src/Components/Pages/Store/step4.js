@@ -6,7 +6,9 @@ import { updateStyleSelection, updateMusicSelection } from '../../../Redux/Reduc
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { object } from 'prop-types';
+import PageLocation from '../Store/StoreComponents/pageLocation'
+
+
 
 
 //add redux to update state with each new selection through the process. 
@@ -165,7 +167,10 @@ class Step4 extends Component {
         return (
             <>
                 <div className={style.pageView}>
-                    <div className={style.pageLocation}></div>
+                    <div className={style.pageLocation}>
+                    <PageLocation />
+
+                    </div>
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>

@@ -13,6 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+import PageLocation from '../StoreComponents/pageLocation'
+import { style } from '@material-ui/system';
+import styles from '../../../../CSS/stepOne.module.css';
 
 function MadeWithLove() {
   return (
@@ -93,9 +96,11 @@ export default function Checkout() {
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* <AppBar position="absolute" color="default" className={classes.appBar}>
-       
-      </AppBar> */}
+      <div className={styles.pageLocation}>
+
+      <PageLocation />
+      </div>
+   
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">

@@ -7,6 +7,8 @@ import { updateRatioSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import PageLocation from '../Store/StoreComponents/pageLocation'
+
 
 
 //add redux to update state with each new selection through the process. 
@@ -36,7 +38,7 @@ class Step3 extends Component {
 
 
         }
-        console.log(this.state.selected)
+     
 
     }
 
@@ -100,7 +102,10 @@ class Step3 extends Component {
         return (
             <>
                 <div className={style.pageView}>
-                    <div className={style.pageLocation}></div>
+                    <div className={style.pageLocation}>
+                    <PageLocation />
+
+                    </div>
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>

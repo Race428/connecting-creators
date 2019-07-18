@@ -8,6 +8,7 @@ const initialState = {
     musicSelection:'',
     fontSelection: '',
     distributionSelection: [],
+    pageNumber:''
 
 
 }
@@ -21,6 +22,7 @@ const UPDATE_MUSIC_SELECTION = 'UPDATE_MUSIC_SELECTION'
 
 const UPDATE_FONT_SELECTION = 'UPDATE_FONT_SELECTION'
 const UPDATE_DISTRIBUTION_SELECTION = 'UPDATE_DISTRIBUTION_SELECTION'
+const UPDATE_PAGE_NUMBER = 'UPDATE_PAGE_NUMBER'
 
 
 
@@ -80,6 +82,12 @@ export function updateDistributionSelection(distributionSelection) {
     }
 }
 
+export function updatePageNumber(pageNumber) {
+    return {
+        type: UPDATE_PAGE_NUMBER,
+        payload: pageNumber
+    }
+}
 
 function Reducer(state = initialState, action) {
     switch (action.type) {
@@ -125,6 +133,11 @@ function Reducer(state = initialState, action) {
                 ...state,
                 distributionSelection: action.payload
             }
+            case UPDATE_PAGE_NUMBER:
+                return {
+                    ...state,
+                    pageNumber: action.payload
+                }
 
         default:
             return state

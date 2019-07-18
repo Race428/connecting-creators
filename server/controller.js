@@ -7,7 +7,7 @@ module.exports ={
     
         let clientResponse = await db.adminLogin({ userName })
         let client = clientResponse[0]
-        console.log('pizza', client)
+
     
     
     

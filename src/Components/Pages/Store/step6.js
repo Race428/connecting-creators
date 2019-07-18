@@ -6,6 +6,8 @@ import PackageDisplay from '../Store/StoreComponents/packageDisplay'
 import { updateDistributionSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import PageLocation from '../Store/StoreComponents/pageLocation'
+
 // import { Link } from 'react-router-dom'
 
 
@@ -38,7 +40,7 @@ class Step6 extends Component {
 
 
         }
-        console.log(this.state.selected)
+       
 
     }
 
@@ -46,7 +48,7 @@ class Step6 extends Component {
 
 
 
-        // console.log(this.state.selectedOptions)
+      
         this.props.updateDistributionSelection(this.state.selectedOptions)
 
     }
@@ -200,7 +202,10 @@ class Step6 extends Component {
         return (
             <>
                 <div className={style.pageView}>
-                    <div className={style.pageLocation}></div>
+                    <div className={style.pageLocation}>
+                    <PageLocation />
+
+                    </div>
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>
