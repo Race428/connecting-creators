@@ -8,15 +8,14 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import PageLocation from '../Store/StoreComponents/pageLocation'
-
 //add redux to update state with each new selection through the process. 
 
 class Step1 extends Component {
 
 
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             package1: 'package1',
             package2: 'package2',
@@ -27,8 +26,13 @@ class Step1 extends Component {
 
 
     }
-
+    
+ 
+   
     componentDidMount() {
+      
+       
+
         if (this.props.packageSelection.length > 0) {
             var name = `${this.props.packageSelection}`
             this.setState({
@@ -102,7 +106,11 @@ class Step1 extends Component {
         return (
             <>
                 <div className={style.pageView}>
+                    <div className={style.pageLocation}>
                     <PageLocation />
+
+                    </div>
+                    
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>
@@ -140,7 +148,7 @@ class Step1 extends Component {
 
 
                             <div className={style.optionButtons}>
-                                <h2>Select Video Package</h2>
+                                <h5>Select Video Package</h5>
 
 
                                 <div id={`${this.state.package1}`} className='option1'

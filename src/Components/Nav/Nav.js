@@ -4,12 +4,16 @@ import {Link} from 'react-router-dom'
 // import Logo from '../Images/logo.PNG'
 
 export default class Nav extends Component {
+   
+   
     render() {
         return (
             <>
+
+           
             <nav>
                <Link to='/'>
-                <img className={navStyles.logo} src='https://achesonco.s3-us-west-1.amazonaws.com/WhiteConnecting.png ' alt='logo' /> 
+                <img className={navStyles.logo} src='https://achesonco.s3-us-west-1.amazonaws.com/BlackConnecting.png ' alt='logo' /> 
                 </Link>
                
                 <Link to='/podcasts'>

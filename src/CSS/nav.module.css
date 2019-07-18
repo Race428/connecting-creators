@@ -4,23 +4,26 @@
 }
 
 nav{
-    width: 80%;
-    margin: auto;
-    height: 15%;
+    width: 80vw;
+    /* margin: auto; */
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: fixed;
+    position: relative;
     top:0;
-    z-index: 500;
-    background-color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    /* z-index: 500; */
+    /* background-color: black; */
     /* margin-bottom: 15em; */
     
    
 }
 
 .link{
-    color: white;;
+    color: black;;
     text-decoration: none;
 
 }

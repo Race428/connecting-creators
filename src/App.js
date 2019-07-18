@@ -1,5 +1,6 @@
 import React from 'react';
-import appStyles from './CSS/app.module.css'
+// import appStyles from './CSS/app.module.css'
+import './CSS/generalStyles.css'
 import {HashRouter} from 'react-router-dom'
 import router from './router'
 import Nav from './Components/Nav/Nav'
@@ -14,13 +15,13 @@ function App() {
     <Provider store={store}>
 
    <HashRouter>
-     <div className={appStyles.app}>
+     
+       <div className='pageView'>
        <Nav />
-       <div className={appStyles.pageView}>
-       {router}
+       {router} 
        </div>
    
-     </div>
+  
    </HashRouter>
    </Provider>
   );
