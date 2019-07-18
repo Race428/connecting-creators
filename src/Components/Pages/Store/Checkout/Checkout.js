@@ -17,17 +17,6 @@ import PageLocation from '../StoreComponents/pageLocation'
 import { style } from '@material-ui/system';
 import styles from '../../../../CSS/stepOne.module.css';
 
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Built with love by the '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </Link>
-      {' team.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -48,8 +37,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(3),
     padding: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6),
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
       padding: theme.spacing(3),
     },
   },
@@ -146,7 +135,7 @@ export default function Checkout() {
             )}
           </React.Fragment>
         </Paper>
-        <MadeWithLove />
+      
       </main>
     </React.Fragment>
   );
