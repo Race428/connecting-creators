@@ -8,7 +8,7 @@ import { updateDetailSelection } from '../../../../Redux/Reducer';
 
 
 function PackageDiplay(props) {
-    const pages =['/shop/select-package','/shop/select-details','/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options' ]
+    const pages =['/shop/select-package','/shop/select-details','/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options', '/shop/checkout' ]
 
 const next = () => { 
 

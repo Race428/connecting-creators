@@ -44,8 +44,14 @@ class Step2 extends Component {
             })
             
         }
-        // await this.props.updatePageNumber('/shop/select-details')
+        else { 
+            this.setState({
+                option1:'selected',
+                selected:'option1'
+            })
+        }
 
+      
 }
 
     componentDidUpdate = () => {

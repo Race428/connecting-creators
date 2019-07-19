@@ -26,38 +26,61 @@ class Step4 extends Component {
             music1: 'music1',
             music2: 'music2',
             music3: 'music3',
-            selected: '',
-            musicSelected: ''
+          
         }
 
 
     }
 
-    componentDidMount() {
+    componentDidMount =  async() => {
         if (this.props.styleSelection.length > 0) {
             var style = `${this.props.styleSelection}`
-            this.setState({
-                [style]: style.selected,
+          await  this.setState({
+                [style]: 'selected',
                 selected: `${style}`
             })
+        
+            this.props.updateStyleSelection(this.state.selected)
+
 
 
         }
+        else { 
+           await this.setState({
+                option1:'selected',
+                selected:'option1'
+            })
+         this.props.updateStyleSelection(this.state.selected)
+
+        }
+
 
         if (this.props.musicSelection.length > 0) {
-            var music = `${this.props.styleSelection}`
-            this.setState({
-                [music]: style.selected,
+            var music = `${this.props.musicSelection}`
+          await  this.setState({
+                [music]: 'selected',
                 musicSelected: `${music}`
             })
+      this.props.updateMusicSelection(this.state.musicSelected)
+
 
 
         }
+        else { 
+           await this.setState({
+                music1:'selected',
+                musicSelected:'music1'
+            })
+       this.props.updateMusicSelection(this.state.musicSelected)
+
+        }
+        
 
 
     }
 
     componentDidUpdate = () => {
+
       
     }
 

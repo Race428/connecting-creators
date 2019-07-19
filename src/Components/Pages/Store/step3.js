@@ -38,6 +38,12 @@ class Step3 extends Component {
 
 
         }
+        else { 
+            this.setState({
+                option1:'selected',
+                selected:'option1'
+            })
+        }
      
 
     }
