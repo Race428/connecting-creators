@@ -27,9 +27,24 @@ function PackageDiplay(props) {
     const distributionPrices = [200,200,200,200]
 
 
-// []
+
+const optionIndex = ['option1', 'option2','option3','option4']
+
+    // packageIndexFunction= (props.packageSelectd){ 
+    //     var indexItem = optionIndex.indexOf(value)
+    //     const packagePrice = packagePrices[indexItem]
+    //     console.log(packagePrice)
+    // }
+
+    //making it so that whatever is on props of each redux state gets the index and then is assosciated with the price in the specific array. 
 
 
+    // find out how to do a compoenent did update and have it recognize a new redux state change
+
+
+    const me = () => { 
+        const me = <h1>Hi how are you</h1>
+    }
 
 
 
