@@ -4,14 +4,36 @@ import style from '../../../../CSS/packageDisplay.module.css'
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { updateDetailSelection } from '../../../../Redux/Reducer';
 
 
 function PackageDiplay(props) {
-    const pages =['/shop/select-package','/shop/select-details','/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options', '/shop/checkout', ]
+    const pages =['/shop/select-package','/shop/select-details','/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options' ]
 
 const next = () => { 
-    var x = pages.indexOf(props.location.pathname) 
-    console.log(x)
+
+  
+    var x = pages.indexOf(props.location.pathname) + 1 
+  
+
+    if(props.fontSelection === 'option4') { 
+        window.alert('please type in name of custom font')
+    }
+
+    else { 
+props.history.push(pages[x])
+
+        // props.history.push(`/shop/select-distribution-options`)
+    }
+
+
+// props.history.push(pages[x])
+// path is select-package. so x  = 0 
+// if clicked, x should equal index 1 which is select-details 
+
+
+
+
 
 }
 
