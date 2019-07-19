@@ -37,6 +37,17 @@ class PageLocation extends Component {
 
         this.props.history.push(value)
 
+        if(this.props.distributionSelection.length === 0) { 
+            window.alert('please select at least one distribution option')
+            this.props.history.push('/shop/select-distribution-options')
+        }
+    
+        else { 
+    this.props.history.push(value)
+    
+            // props.history.push(`/shop/select-distribution-options`)
+        }
+    
 
     }
 

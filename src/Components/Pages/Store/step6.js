@@ -32,11 +32,20 @@ class Step6 extends Component {
 
     componentDidMount() {
         if (this.props.distributionSelection.length > 0) {
-            var name = `${this.props.distributionSelection}`
+            var name = this.props.distributionSelection
+          
+          for(let i = 0; i<name.length; i++){
+
+            var element = name[i]
+          
             this.setState({
-                [name]: true,
-                selectedOptions: [...this.state.selectedOptions, `${name}`]
+                [element]: true,
+                selectedOptions: [...this.state.selectedOptions, `${element}`]
             })
+
+
+          }
+          
 
 
         } 
@@ -52,17 +61,6 @@ class Step6 extends Component {
     }
 
     componentDidUpdate = () => {
-
-
-        if(this.state.selectedOptions.length === 0) { 
-            window.alert('You must select at least 1 option.')
-            this.setState({
-                option1:true,
-                selectedOptions:['option1'],
-                selected: 'option1'
-            })
-        }
-
       
         this.props.updateDistributionSelection(this.state.selectedOptions)
 

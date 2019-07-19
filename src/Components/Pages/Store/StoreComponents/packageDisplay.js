@@ -26,6 +26,18 @@ props.history.push(pages[x])
         // props.history.push(`/shop/select-distribution-options`)
     }
 
+    if(props.distributionSelection.length === 0) { 
+        window.alert('please select at least one distribution option')
+        props.history.push('/shop/select-distribution-options')
+    }
+
+    else { 
+props.history.push(pages[x])
+
+        // props.history.push(`/shop/select-distribution-options`)
+    }
+
+
 
 // props.history.push(pages[x])
 // path is select-package. so x  = 0 
