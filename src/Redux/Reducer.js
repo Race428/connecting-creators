@@ -1,13 +1,13 @@
 const initialState = {
 
     podcasts: [],
-    packageSelection: '',
-    detailSelection: '',
-    ratioSelection: '',
-    styleSelection: '',
-    musicSelection:'',
-    fontSelection: '',
-    distributionSelection: [],
+    packageSelection: 'option1',
+    detailSelection: 'option1',
+    ratioSelection: 'option1',
+    styleSelection: 'option1',
+    musicSelection:'music1',
+    fontSelection: 'option1',
+    distributionSelection: ['option1'],
     pageNumber:''
 
 

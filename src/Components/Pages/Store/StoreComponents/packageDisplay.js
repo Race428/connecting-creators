@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import style from '../../../../CSS/packageDisplay.module.css'
 // import {updatePackageSelection} from '../../Redux/Reducer'
 
@@ -8,49 +8,73 @@ import { updateDetailSelection } from '../../../../Redux/Reducer';
 
 
 function PackageDiplay(props) {
-    const pages =['/shop/select-package','/shop/select-details','/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options', '/shop/checkout' ]
+    const pages = ['/shop/select-package', '/shop/select-details', '/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options', '/shop/checkout']
 
-const next = () => { 
 
-  
-    var x = pages.indexOf(props.location.pathname) + 1 
-  
+//have redux already have everything in the choices
+    const packagePrices = [700, 900,1200]
 
-    if(props.fontSelection === 'option4') { 
-        window.alert('please type in name of custom font')
+    const detailPrices = [0, 500, 1000]
+
+    const ratioPrices = [0, 150, 300]
+
+    const stylePrices = [0,0,100]
+
+    const musicPrices = [0,0,0]
+
+    const fontPrices = [0,0,0]
+
+    const distributionPrices = [200,200,200,200]
+
+
+// []
+
+
+
+
+
+    const next = () => {
+
+        const y = props.location.pathname
+
+        var x = pages.indexOf(props.location.pathname) + 1
+
+
+        if (props.fontSelection === 'option4') {
+            window.alert('please type in name of custom font')
+        }
+
+        else {
+            props.history.push(pages[x])
+
+            // props.history.push(`/shop/select-distribution-options`)
+        }
+
+        if (props.distributionSelection.length === 0 && y === '/shop/select-distribution-options') {
+            window.alert('please select at least one distribution option')
+            props.history.push('/shop/select-distribution-options')
+        }
+
+        else {
+            props.history.push(pages[x])
+
+            // props.history.push(`/shop/select-distribution-options`)
+        }
+
+
+
+        // props.history.push(pages[x])
+        // path is select-package. so x  = 0 
+        // if clicked, x should equal index 1 which is select-details 
+
+
+
+
+
     }
 
-    else { 
-props.history.push(pages[x])
+    // making a funtion that takes int he index of the path name that then adds one and this.props.history.push's to the next index. Do the same opposite for the back button 
 
-        // props.history.push(`/shop/select-distribution-options`)
-    }
-
-    if(props.distributionSelection.length === 0) { 
-        window.alert('please select at least one distribution option')
-        props.history.push('/shop/select-distribution-options')
-    }
-
-    else { 
-props.history.push(pages[x])
-
-        // props.history.push(`/shop/select-distribution-options`)
-    }
-
-
-
-// props.history.push(pages[x])
-// path is select-package. so x  = 0 
-// if clicked, x should equal index 1 which is select-details 
-
-
-
-
-
-}
-
-// making a funtion that takes int he index of the path name that then adds one and this.props.history.push's to the next index. Do the same opposite for the back button 
-    
 
     return <div className={style.pageView}>
 
@@ -59,7 +83,7 @@ props.history.push(pages[x])
 
 
 
-           <div  onClick={() => next()}className={style.button}>NEXT</div>
+            <div className={style.button} onClick={() => next()}>NEXT</div>
         </div>
 
     </div>

@@ -18,9 +18,9 @@ class Step1 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            package1: 'package1',
-            package2: 'package2',
-            package3: 'package3',
+            option: 'option1',
+            option2: 'option2',
+            option3: 'option3',
             // selected:'package1'
 
             // selected:''
@@ -39,13 +39,13 @@ class Step1 extends Component {
             this.setState({
                 [name]: style.selected,
                 selected: `${name}`
-            })         
+            })
 
 
-        }   else { 
+        } else {
             this.setState({
-                package1:'selected',
-                selected:'package1'
+                option1: 'selected',
+                selected: 'option1'
             })
         }
 
@@ -58,38 +58,35 @@ class Step1 extends Component {
         this.props.updatePackageSelection(this.state.selected)
 
     }
-    package1Select = async () => {
+    option1Select = async () => {
         await this.setState({
-            package1: 'selected',
-            package2: 'package2',
-            package3: 'package3',
-            selected: 'package1'
+            option1: 'selected',
+            option2: 'option2',
+            option3: 'option3',
+            selected: 'option1'
         });
     }
 
 
 
-    package2Select = async () => {
+    option2Select = async () => {
         await this.setState({
-            package1: 'package1',
-            package2: 'selected',
-            package3: 'package3',
-            selected: 'package2'
-
-        });
-
-
-
+            option1: 'option1',
+            option2: 'selected',
+            option3: 'option3',
+            selected: 'option2'
+        })
+    
 
     }
 
 
-    package3Select = () => {
+    option3Select = () => {
         this.setState({
-            package1: 'package1',
-            package2: 'package2',
-            package3: 'selected',
-            selected: 'package3'
+            option1: 'option1',
+            option2: 'option2',
+            option3: 'selected',
+            selected: 'option3'
 
         });
 
@@ -126,13 +123,13 @@ class Step1 extends Component {
                             <div className={style.currentDisplay}>
 
                                 {
-                                    this.state.selected === 'package1' ?
+                                    this.state.selected === 'option1' ?
                                         <img src='https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option1-image' name='option1-image' /> :
                                         <></>
                                 }
 
                                 {
-                                    this.state.selected === 'package2' ?
+                                    this.state.selected === 'option2' ?
                                         <img src='https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option2-image' name='option2-image' /> :
                                         <> </>
 
@@ -141,7 +138,7 @@ class Step1 extends Component {
 
 
                                 {
-                                    this.state.selected === 'package3' ?
+                                    this.state.selected === 'option3' ?
                                         <img src=' https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option3-image' name='option3-image' /> :
                                         <> </>
                                 }
@@ -158,19 +155,19 @@ class Step1 extends Component {
                                 <h5>Select Video Package</h5>
 
 
-                                <div id={`${this.state.package1}`} className='option1'
+                                <div id={`${this.state.option1}`} className='option1'
 
-                                    onClick={this.package1Select}
+                                    onClick={this.option1Select}
 
                                 >Video Series</div>
 
-                                <div id={`${this.state.package2}`} className='option2'
-                                    onClick={this.package2Select}
+                                <div id={`${this.state.option2}`} className='option2'
+                                    onClick={this.option2Select}
 
                                 >Podcast</div>
 
-                                <div id={`${this.state.package3}`}
-                                    onClick={this.package3Select}
+                                <div id={`${this.state.option3}`}
+                                    onClick={this.option3Select}
                                     className='option3' >YouTube</div>
 
 
@@ -180,7 +177,7 @@ class Step1 extends Component {
 
 
                                 {
-                                    this.state.selected === 'package1' ?
+                                    this.state.selected === 'option1' ?
                                         <div className={style.description}>
                                             <h3>Our series package includes:</h3>
                                             <ul>
@@ -193,7 +190,7 @@ class Step1 extends Component {
                                 }
 
                                 {
-                                    this.state.selected === 'package2' ?
+                                    this.state.selected === 'option2' ?
                                         <div className={style.description}>
                                             <h3>Our Podcast package includes:</h3>
                                             <ul>
@@ -209,7 +206,7 @@ class Step1 extends Component {
 
 
                                 {
-                                    this.state.selected === 'package3' ?
+                                    this.state.selected === 'option3' ?
                                         <div className={style.description}>
                                             <h3>Our Youtube package includes:</h3>
                                             <ul>
@@ -236,8 +233,8 @@ class Step1 extends Component {
                         </div>
                     </div>
                     <div className={style.pageLocation}>
-                    <PackageDisplay />
-                      
+                        <PackageDisplay />
+
                     </div>
                 </div>
             </>
