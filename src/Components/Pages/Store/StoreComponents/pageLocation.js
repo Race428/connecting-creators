@@ -42,11 +42,7 @@ class PageLocation extends Component {
             this.props.history.push('/shop/select-distribution-options')
         }
     
-        else { 
-    this.props.history.push(value)
-    
-            // props.history.push(`/shop/select-distribution-options`)
-        }
+       
     
 
     }

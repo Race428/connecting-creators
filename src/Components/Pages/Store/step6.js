@@ -33,20 +33,25 @@ class Step6 extends Component {
     componentDidMount() {
         if (this.props.distributionSelection.length > 0) {
             var name = this.props.distributionSelection
+            var lastIndex = this.props.distributionSelection.length-1
+            
           
           for(let i = 0; i<name.length; i++){
 
             var element = name[i]
+           
           
             this.setState({
                 [element]: true,
-                selectedOptions: [...this.state.selectedOptions, `${element}`]
+              selectedOptions: name,
             })
 
 
           }
           
-
+          this.setState({
+              selected: this.props.distributionSelection[lastIndex]
+          })
 
         } 
         else { 
