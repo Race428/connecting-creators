@@ -1,6 +1,7 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { Component, useEffect, useState, useRef } from 'react'
 import style from '../../../../CSS/packageDisplay.module.css'
 // import {updatePackageSelection} from '../../Redux/Reducer'
+import '../../../../CSS/odometer-theme-plaza.css'
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -8,135 +9,138 @@ import { updateDetailSelection, updatePackageSelection } from '../../../../Redux
 
 
 function PackageDiplay(props) {
+
+
+
+
+
+
+
+
+
+
+    
     const pages = ['/shop/select-package', '/shop/select-details', '/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options', '/shop/checkout']
 
 
-const {packageSelection, detailSelection,ratioSelection, styleSelection, musicSelection, fontSelection,distributionSelection } = props
+    const { packageSelection, detailSelection, ratioSelection, styleSelection, musicSelection, fontSelection, distributionSelection } = props
 
 
-// console.log(packageSelection,detailSelection,ratioSelection,styleSelection)
-//have redux already have everything in the choices
-    const packagePrices = [700, 900,1200]
+    // console.log(packageSelection,detailSelection,ratioSelection,styleSelection)
+    //have redux already have everything in the choices
+    const packagePrices = [700, 900, 1200]
 
     const detailPrices = [0, 500, 1000]
 
     const ratioPrices = [0, 150, 300]
 
-    const stylePrices = [0,0,100]
+    const stylePrices = [0, 0, 100]
 
-    const musicPrices = [0,0,0]
+    const musicPrices = [0, 0, 0]
 
-    const fontPrices = [0,0,0]
+    const fontPrices = [0, 0, 0]
 
-    const distributionPrices = [200,200,200,200]
+    const distributionPrices = [200, 200, 200, 200]
 
-    const totalPrice=[]
+    const totalPrice = []
 
-const optionIndex = ['option1', 'option2','option3','option4']
-const musicIndex = ['music1', 'music2','music3','music4']
+    const optionIndex = ['option1', 'option2', 'option3', 'option4']
+    const musicIndex = ['music1', 'music2', 'music3', 'music4']
+
+    var totalSum = useRef(null)
+console.log(totalSum.current)
+
+    // const [packageSelection] = useState(0)
+    const packagePrice = () => {
+        // console.log(packageSelection)
+        var indexItem = optionIndex.indexOf(packageSelection)
+        var price = packagePrices[indexItem]
+        totalPrice.push(price)
+
+    }
 
 
-// const [packageSelection] = useState(0)
-const packagePrice = () =>{ 
-    // console.log(packageSelection)
-    var indexItem = optionIndex.indexOf(packageSelection)
-    var price = packagePrices[indexItem]
-    totalPrice.push(price)
+    const detailPrice = () => {
+        // console.log(detailSelection)
+        var indexItem = optionIndex.indexOf(detailSelection)
+        var price = detailPrices[indexItem]
+
+        totalPrice.push(price)
+
+    }
+
+    const ratioPrice = () => {
+        // console.log(detailSelection)
+        var indexItem = optionIndex.indexOf(ratioSelection)
+        var price = ratioPrices[indexItem]
+
+        totalPrice.push(price)
+
+    }
+    const stylePrice = () => {
+        // console.log(detailSelection)
+        var indexItem = optionIndex.indexOf(styleSelection)
+        var price = stylePrices[indexItem]
+
+        totalPrice.push(price)
+
+    }
+
+    const musicPrice = () => {
+        // console.log(detailSelection)
+        var indexItem = musicIndex.indexOf(musicSelection)
+        var price = musicPrices[indexItem]
+
+        totalPrice.push(price)
+
+    }
+
+    const fontPrice = () => {
+        // console.log(detailSelection)
+        var indexItem = optionIndex.indexOf(fontSelection)
+        var price = fontPrices[indexItem]
+
+        totalPrice.push(price)
+
+    }
+
+
+    const distributionPrice = () => {
+        for (let i = 0; i < distributionSelection.length; i++) {
+
+            var indexItem = optionIndex.indexOf(distributionSelection[i])
+            var price = distributionPrices[indexItem]
+            totalPrice.push(price)
+        }
+
+    }
+
+
+    packagePrice()
+    detailPrice()
+    ratioPrice()
+    stylePrice()
+    musicPrice()
+    fontPrice()
+    distributionPrice()
+
+    const reducer = (a, b) => a + b
+
+    var sumOfNums = totalPrice.reduce((reducer), 0)
     
-}
+   
+console.log(sumOfNums)
 
 
-const detailPrice = () =>{ 
-    // console.log(detailSelection)
-    var indexItem = optionIndex.indexOf(detailSelection)
-    var price = detailPrices[indexItem]
     
-    totalPrice.push(price)
-
-}
-
-const ratioPrice = () =>{ 
-    // console.log(detailSelection)
-    var indexItem = optionIndex.indexOf(ratioSelection)
-    var price = ratioPrices[indexItem]
-    
-    totalPrice.push(price)
-
-}
-const stylePrice = () =>{ 
-    // console.log(detailSelection)
-    var indexItem = optionIndex.indexOf(styleSelection)
-    var price = stylePrices[indexItem]
-    
-    totalPrice.push(price)
-
-}
-
-const musicPrice = () =>{ 
-    // console.log(detailSelection)
-    var indexItem = musicIndex.indexOf(musicSelection)
-    var price = musicPrices[indexItem]
-    
-    totalPrice.push(price)
-
-}
-
-const fontPrice = () =>{ 
-    // console.log(detailSelection)
-    var indexItem = optionIndex.indexOf(fontSelection)
-    var price = fontPrices[indexItem]
-    
-    totalPrice.push(price)
-
-}
-
-
-const distributionPrice = () =>{ 
-   for(let i = 0; i < distributionSelection.length; i++){
-       
-    var indexItem = optionIndex.indexOf(distributionSelection[i])
-    var price = distributionPrices[indexItem] 
-    totalPrice.push(price)
-   }
-
-}
-
-
-
-
-
-
-useEffect(()=> { 
-    
-packagePrice()
-detailPrice()
-ratioPrice()
-stylePrice()
-musicPrice()
-fontPrice()
-distributionPrice()
-
-const reducer =(a, b) => a+b
-
-console.log(totalPrice.reduce(reducer),0)
-
-
-// console.log('total', sum)
-    
-
-// const val = props.packageSelection
-
-// console.log(props.packageSelection)
-  
-
-})
-
     //making it so that whatever is on props of each redux state gets the index and then is assosciated with the price in the specific array. 
 
 
     // find out how to do a compoenent did update and have it recognize a new redux state change
 
 
+
+   
 
 
     const next = () => {
@@ -175,8 +179,7 @@ console.log(totalPrice.reduce(reducer),0)
 
         <div className={style.selectedOptionDetails}>
 
-          
-
+                <h1 className='odometer' >{sumOfNums}</h1>
 
             <div className={style.button} onClick={() => next()}>NEXT</div>
         </div>
