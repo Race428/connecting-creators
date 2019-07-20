@@ -6,7 +6,7 @@ import '../../../../CSS/odometer-theme-plaza.css'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { updateDetailSelection, updatePackageSelection } from '../../../../Redux/Reducer';
-
+import Odometer from 'react-odometerjs';
 
 function PackageDiplay(props) {
 
@@ -19,7 +19,7 @@ function PackageDiplay(props) {
 
 
 
-    
+
     const pages = ['/shop/select-package', '/shop/select-details', '/shop/select-aspect-ratio', '/shop/select-style', '/shop/select-font', '/shop/select-distribution-options', '/shop/checkout']
 
 
@@ -47,8 +47,14 @@ function PackageDiplay(props) {
     const optionIndex = ['option1', 'option2', 'option3', 'option4']
     const musicIndex = ['music1', 'music2', 'music3', 'music4']
 
-    var totalSum = useRef(null)
-console.log(totalSum.current)
+
+
+
+
+
+
+
+
 
     // const [packageSelection] = useState(0)
     const packagePrice = () => {
@@ -124,15 +130,18 @@ console.log(totalSum.current)
     fontPrice()
     distributionPrice()
 
+
+
+
     const reducer = (a, b) => a + b
 
     var sumOfNums = totalPrice.reduce((reducer), 0)
-    
-   
-console.log(sumOfNums)
 
 
-    
+    console.log(sumOfNums)
+
+
+
     //making it so that whatever is on props of each redux state gets the index and then is assosciated with the price in the specific array. 
 
 
@@ -140,7 +149,7 @@ console.log(sumOfNums)
 
 
 
-   
+
 
 
     const next = () => {
@@ -179,7 +188,11 @@ console.log(sumOfNums)
 
         <div className={style.selectedOptionDetails}>
 
-                <h1 className='odometer' >{sumOfNums}</h1>
+            <h1>
+                
+
+                <Odometer className={style.odeometer} value={sumOfNums} format="(.ddd),dd" />;
+</h1>
 
             <div className={style.button} onClick={() => next()}>NEXT</div>
         </div>
