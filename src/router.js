@@ -10,7 +10,7 @@ import Step3 from './Components/Pages/Store/step3'
 import Step4 from './Components/Pages/Store/step4'
 import Step5 from './Components/Pages/Store/step5'
 import Step6 from './Components/Pages/Store/step6'
-import Checkout from './Components/Pages/Store/Checkout/Checkout'
+import Checkout from './Components/Pages/Store//Summary'
 
 
 

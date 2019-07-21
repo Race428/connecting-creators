@@ -149,6 +149,8 @@ nextPage = () => {
 
                             <div className={style.currentDisplay}>
 
+
+ only have 1 font option have it be the custom 
                                 {
                                     this.state.selected === 'option1' ?
                                         <h1 className={style.font1}>

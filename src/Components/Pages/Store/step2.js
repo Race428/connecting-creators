@@ -3,7 +3,7 @@ import style from '../../../CSS/stepOne.module.css'
 import '../../../CSS/store.css'
 import PackageDisplay from '../Store/StoreComponents/packageDisplay'
 
-import { updateDetailSelection, updatePageNumber } from '../../../Redux/Reducer'
+import { updateDetailSelection } from '../../../Redux/Reducer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Link} from 'react-router-dom'
@@ -251,7 +251,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     updateDetailSelection,
-    updatePageNumber
+  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Step2))

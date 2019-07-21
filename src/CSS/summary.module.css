@@ -1,0 +1,9 @@
+.pageView{
+    display: flex;
+    background-color: blue;
+    height: 90vh;
+    width: 100vw;
+   justify-content: center;
+
+}
+

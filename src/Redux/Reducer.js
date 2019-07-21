@@ -8,7 +8,7 @@ const initialState = {
     musicSelection:'music1',
     fontSelection: 'option1',
     distributionSelection: ['option1'],
-    pageNumber:''
+    price: 0
 
 
 }
@@ -22,7 +22,8 @@ const UPDATE_MUSIC_SELECTION = 'UPDATE_MUSIC_SELECTION'
 
 const UPDATE_FONT_SELECTION = 'UPDATE_FONT_SELECTION'
 const UPDATE_DISTRIBUTION_SELECTION = 'UPDATE_DISTRIBUTION_SELECTION'
-const UPDATE_PAGE_NUMBER = 'UPDATE_PAGE_NUMBER'
+const UPDATE_PRICE = 'UPDATE_PRICE'
+
 
 
 
@@ -82,10 +83,10 @@ export function updateDistributionSelection(distributionSelection) {
     }
 }
 
-export function updatePageNumber(pageNumber) {
+export function updatePrice(price) {
     return {
-        type: UPDATE_PAGE_NUMBER,
-        payload: pageNumber
+        type: UPDATE_PRICE,
+        payload: price
     }
 }
 
@@ -133,10 +134,10 @@ function Reducer(state = initialState, action) {
                 ...state,
                 distributionSelection: action.payload
             }
-            case UPDATE_PAGE_NUMBER:
+            case UPDATE_PRICE:
                 return {
                     ...state,
-                    pageNumber: action.payload
+                    price: action.payload
                 }
 
         default:
