@@ -217,15 +217,6 @@ class Step1 extends Component {
                                         </div> :
                                         <> </>
                                 }
-
-                                {
-                                    this.state.selected ?
-                                        <Link to='/shop/select-details'>
-                                            <button className={style.button} onClick={this.reset}>Next Step</button>
-                                        </Link> :
-                                        <></>
-                                }
-
                             </div>
 
 

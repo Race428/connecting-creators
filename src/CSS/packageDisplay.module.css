@@ -14,12 +14,12 @@
 .selectedOptionDetails{ 
     height: 100%;
     width: 100%;
-
+background-color: grey;
+display: flex;
+align-items: center;
 }
 
-.selectedOptionDetails h1{
-font-size: 1em;
-}
+
 
 .button { 
     height: 2em; 
@@ -33,4 +33,9 @@ font-size: 1em;
 
 .odeometer{
     color: black;
+    font-size: .5em;
+    height: 100%;
+    /* background-color: yellow; */
+  display: flex;
+  align-items: center;
 }

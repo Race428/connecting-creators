@@ -1,11 +1,11 @@
-import React  from 'react'
+import React from 'react'
 import style from '../../../../CSS/packageDisplay.module.css'
 
 import '../../../../CSS/odometer-theme-plaza.css'
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { updatePrice} from '../../../../Redux/Reducer';
+import { updatePrice } from '../../../../Redux/Reducer';
 import Odometer from 'react-odometerjs';
 
 function PackageDiplay(props) {
@@ -138,7 +138,7 @@ function PackageDiplay(props) {
     var sumOfNums = totalPrice.reduce((reducer), 0)
 
 
-   props.updatePrice(sumOfNums)
+    props.updatePrice(sumOfNums)
 
 
 
@@ -179,12 +179,11 @@ function PackageDiplay(props) {
 
         <div className={style.selectedOptionDetails}>
 
-            <h1>
-       
+            <div className={style.odeometer}>
 
-                <Odometer className={style.odeometer} value={sumOfNums} format="(.ddd),dd" />
-</h1>
+                <Odometer value={sumOfNums} format="(.ddd),dd" />
 
+            </div>
             <div className={style.button} onClick={() => next()}>NEXT</div>
         </div>
 
@@ -200,7 +199,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     updatePrice
 }
-export default connect(mapStateToProps,mapDispatchToProps)(withRouter(PackageDiplay))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PackageDiplay))
 
 
 
