@@ -1,6 +1,6 @@
 import React  from 'react'
 import style from '../../../../CSS/packageDisplay.module.css'
-// import {updatePackageSelection} from '../../Redux/Reducer'
+
 import '../../../../CSS/odometer-theme-plaza.css'
 
 import { connect } from 'react-redux'
@@ -138,16 +138,7 @@ function PackageDiplay(props) {
     var sumOfNums = totalPrice.reduce((reducer), 0)
 
 
-    console.log(sumOfNums)
-
-
-
-    //making it so that whatever is on props of each redux state gets the index and then is assosciated with the price in the specific array. 
-
-
-    // find out how to do a compoenent did update and have it recognize a new redux state change
-
-
+   props.updatePrice(sumOfNums)
 
 
 
@@ -209,7 +200,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     updatePrice
 }
-export default connect(mapStateToProps,,mapDispatchToProps)(withRouter(PackageDiplay))
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(PackageDiplay))
 
 
 
