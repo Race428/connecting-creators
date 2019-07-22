@@ -199,16 +199,7 @@ class Step6 extends Component {
 
 
 
-    nextPage = () => {
-        if (this.state.selected === 'option4') {
-            window.alert('please type in name of custom font')
-        }
-
-        else {
-            this.props.history.push(`/shop/checkout`)
-        }
-    }
-
+    
 
 
 
@@ -333,22 +324,6 @@ class Step6 extends Component {
                                 }
                                
 
-                                {/* <div id={`${this.state.option2}`} className='option2'
-                                    onClick={this.ratio2Select}
-
-                                >Instagram</div>
-
-                                <div id={`${this.state.option3}`}
-                                    onClick={this.ratio3Select}
-                                    className='option3' >Instagram Highlights</div>
-
-
-                                <div id={`${this.state.option4}`}
-                                    onClick={this.ratio4Select}
-
-                                    className='option4'>
-                                    YouTube Highlights
-                                    </div> */}
 
                             </div>
 
@@ -359,58 +334,7 @@ class Step6 extends Component {
 
 
 
-
-                                {/* {
-                                    this.state.selected === 'ratio1' ?
-                                        <div className={style.description}>
-                                            <h3>Our series package includes:</h3>
-                                            <ul>
-                                                <li>- 10 to 20 minute videos</li>
-                                                <li>- 3 videographers</li>
-                                                
-                                            </ul>
-                                         </div>:
-                                        <></>
-                                }
-
-                                {
-                                    this.state.selected === 'ratio2' ?
-                                    <div className={style.description}>
-                                    <h3>Our Podcast package includes:</h3>
-                                    <ul>
-                                        <li>- 20 to 60 minute interviews</li>
-                                        <li>- Podcast studio for filiming</li>
-                                        <li>- 2 videographers</li>
-                                    </ul>
-                                 </div>:
-                                        <> </>
-
-                                }
-
-
-
-                                {
-                                    this.state.selected === 'ratio3' ?
-                                    <div className={style.description}>
-                                    <h3>Our Youtube package includes:</h3>
-                                    <ul>
-                                        <li>- 5 to 10 minute videos</li>
-                                        <li>- Basic studeio set up</li>
-                                        <li>- Vlog style or educational channel</li>
-                                    </ul>
-                                 </div>:
-                                        <> </>
-                                } */}
-
-                                {
-                                    this.state.selected ?
-
-
-
-                                        <button className={style.button} onClick={this.nextPage}>Next Step</button>
-                                        :
-                                        <></>
-                                }
+                              
 
                             </div>
 

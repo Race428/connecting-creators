@@ -202,14 +202,14 @@ class Step4 extends Component {
 
                                 {
                                     this.state.selected === 'option1' ?
-                                        <img src='https://www.denverpost.com/wp-content/uploads/2018/11/traffic_Denver_rj_09808.jpg?w=817' alt='fs' id='option1-image' name='option1-image' /> :
+                                        <img src='https://www.denverpost.com/wp-content/uploads/2018/11/traffic_Denver_rj_09808.jpg?w=817' alt='fs' id='option1-image' name='option1-image'  className={style.step1Image} /> :
                                         <></>
 
                                 }
 
                                 {
                                     this.state.selected === 'option2' ?
-                                        <img src='https://media.cntraveller.in/wp-content/uploads/2018/09/Tokyo-Shibuya-neon-lights-866x487.jpg' alt='fs' id='option2-image' name='option2-image' /> :
+                                        <img src='https://media.cntraveller.in/wp-content/uploads/2018/09/Tokyo-Shibuya-neon-lights-866x487.jpg' alt='fs' id='option2-image' name='option2-image'  className={style.step1Image} /> :
                                         <> </>
 
                                 }
@@ -218,7 +218,7 @@ class Step4 extends Component {
 
                                 {
                                     this.state.selected === 'option3' ?
-                                        <img src='https://www.tripsavvy.com/thmb/M26q7v-vfonPlL7Zb-2D6wyMeBs=/950x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/space-needle-and-mt-rainier-at-dusk-in-seattle-965903630-5c3f86694cedfd0001316b8d.jpg' alt='fs' id='option3-image' name='option3-image' /> :
+                                        <img src='https://www.tripsavvy.com/thmb/M26q7v-vfonPlL7Zb-2D6wyMeBs=/950x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/space-needle-and-mt-rainier-at-dusk-in-seattle-965903630-5c3f86694cedfd0001316b8d.jpg' alt='fs' id='option3-image' name='option3-image'  className={style.step1Image} /> :
 
                                         <> </>
                                 }
@@ -227,7 +227,6 @@ class Step4 extends Component {
                             </div>
 
 
-                            <PackageDisplay />
                         </div>
                         <div className={style.optionContainer}>
 
@@ -283,62 +282,18 @@ class Step4 extends Component {
 
 
 
-
-                                {/* {
-                                    this.state.selected === 'ratio1' ?
-                                        <div className={style.description}>
-                                            <h3>Our series package includes:</h3>
-                                            <ul>
-                                                <li>- 10 to 20 minute videos</li>
-                                                <li>- 3 videographers</li>
-                                                
-                                            </ul>
-                                         </div>:
-                                        <></>
-                                }
-
-                                {
-                                    this.state.selected === 'ratio2' ?
-                                    <div className={style.description}>
-                                    <h3>Our Podcast package includes:</h3>
-                                    <ul>
-                                        <li>- 20 to 60 minute interviews</li>
-                                        <li>- Podcast studio for filiming</li>
-                                        <li>- 2 videographers</li>
-                                    </ul>
-                                 </div>:
-                                        <> </>
-
-                                }
-
-
-
-                                {
-                                    this.state.selected === 'ratio3' ?
-                                    <div className={style.description}>
-                                    <h3>Our Youtube package includes:</h3>
-                                    <ul>
-                                        <li>- 5 to 10 minute videos</li>
-                                        <li>- Basic studeio set up</li>
-                                        <li>- Vlog style or educational channel</li>
-                                    </ul>
-                                 </div>:
-                                        <> </>
-                                } */}
-
-                                {
-                                    this.state.selected ?
-                                        <Link to='/shop/select-font'>
-                                            <button className={style.button} onClick={this.reset}>Next Step</button>
-                                        </Link> :
-                                        <></>
-                                }
+>
+                                
 
                             </div>
 
 
 
                         </div>
+                    </div>
+                    <div className={style.pageLocation}>
+                        <PackageDisplay />
+
                     </div>
                 </div>
             </>

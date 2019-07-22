@@ -6,7 +6,7 @@ const initialState = {
     ratioSelection: 'option1',
     styleSelection: 'option1',
     musicSelection:'music1',
-    fontSelection: 'option1',
+    fontSelection: 'Type Here',
     distributionSelection: ['option1'],
     price: 0
 

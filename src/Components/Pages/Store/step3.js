@@ -52,38 +52,35 @@ class Step3 extends Component {
         this.props.updateRatioSelection(this.state.selected)
 
     }
-    ratio1Select = async () => {
+    option1Select = async () => {
         await this.setState({
-            option1: style.selected,
+            option1: 'selected',
             option2: 'option2',
             option3: 'option3',
-            selected: 'option1',
+            selected: 'option1'
         });
     }
 
 
 
-    ratio2Select = async () => {
+    option2Select = async () => {
         await this.setState({
             option1: 'option1',
-            option2: style.selected,
+            option2: 'selected',
             option3: 'option3',
-            selected: 'option2',
-
-        });
-
-
-
+            selected: 'option2'
+        })
+    
 
     }
 
 
-    ratio3Select = () => {
+    option3Select = () => {
         this.setState({
             option1: 'option1',
             option2: 'option2',
-            option3: style.selected,
-            selected: 'option3',
+            option3: 'selected',
+            selected: 'option3'
 
         });
 
@@ -109,9 +106,10 @@ class Step3 extends Component {
             <>
                 <div className={style.pageView}>
                     <div className={style.pageLocation}>
-                    <PageLocation />
+                        <PageLocation />
 
                     </div>
+
                     <div className={style.selections}>
 
                         <div className={style.currentDisplayContainer}>
@@ -120,14 +118,13 @@ class Step3 extends Component {
 
                                 {
                                     this.state.selected === 'option1' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1920x.png' alt='fs' id='option1-image' name='option1-image' /> :
+                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1920x.png' alt='fs' id='option1-image' name='option1-image' className={style.step1Image} /> :
                                         <></>
-                                      
                                 }
 
                                 {
                                     this.state.selected === 'option2' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1440p.png' alt='fs' id='option2-image' name='option2-image' /> :
+                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/1440p.png' alt='fs' id='option2-image' name='option2-image' className={style.step1Image} /> :
                                         <> </>
 
                                 }
@@ -136,8 +133,7 @@ class Step3 extends Component {
 
                                 {
                                     this.state.selected === 'option3' ?
-                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/4k.png' alt='fs' id='option3-image' name='option3-image' /> :
-                                       
+                                        <img src='https://s3-us-west-1.amazonaws.com/achesonco/4k.png' alt='fs' id='option3-image' name='option3-image' className={style.step1Image} /> :
                                         <> </>
                                 }
 
@@ -145,29 +141,28 @@ class Step3 extends Component {
                             </div>
 
 
-                            <PackageDisplay />
                         </div>
                         <div className={style.optionContainer}>
 
 
                             <div className={style.optionButtons}>
-                                <h2>Select Your Aspect Ratio</h2>
+                                <h4>Pick Aspect Ratio</h4>
 
 
                                 <div id={`${this.state.option1}`} className='option1'
 
-                                    onClick={this.ratio1Select}
+                                    onClick={this.option1Select}
 
-                                >1920 x 1018</div>
+                                >1920 x 1080</div>
 
                                 <div id={`${this.state.option2}`} className='option2'
-                                    onClick={this.ratio2Select}
+                                    onClick={this.option2Select}
 
-                                >Slightly Wider</div>
+                                >Wider - 1440p</div>
 
                                 <div id={`${this.state.option3}`}
-                                    onClick={this.ratio3Select}
-                                    className='option3' >Widest (21x9)</div>
+                                    onClick={this.option3Select}
+                                    className='option3' >Widest - 4K</div>
 
 
                             </div>
@@ -175,61 +170,16 @@ class Step3 extends Component {
                             <div className={style.optionDescription}>
 
 
-                                {/* {
-                                    this.state.selected === 'ratio1' ?
-                                        <div className={style.description}>
-                                            <h3>Our series package includes:</h3>
-                                            <ul>
-                                                <li>- 10 to 20 minute videos</li>
-                                                <li>- 3 videographers</li>
-                                                
-                                            </ul>
-                                         </div>:
-                                        <></>
-                                }
-
-                                {
-                                    this.state.selected === 'ratio2' ?
-                                    <div className={style.description}>
-                                    <h3>Our Podcast package includes:</h3>
-                                    <ul>
-                                        <li>- 20 to 60 minute interviews</li>
-                                        <li>- Podcast studio for filiming</li>
-                                        <li>- 2 videographers</li>
-                                    </ul>
-                                 </div>:
-                                        <> </>
-
-                                }
-
-
-
-                                {
-                                    this.state.selected === 'ratio3' ?
-                                    <div className={style.description}>
-                                    <h3>Our Youtube package includes:</h3>
-                                    <ul>
-                                        <li>- 5 to 10 minute videos</li>
-                                        <li>- Basic studeio set up</li>
-                                        <li>- Vlog style or educational channel</li>
-                                    </ul>
-                                 </div>:
-                                        <> </>
-                                } */}
-
-                                {
-                                    this.state.selected ?
-                                        <Link to='/shop/select-style'>
-                                            <button className={style.button} onClick={this.reset}>Next Step</button>
-                                        </Link> :
-                                        <></>
-                                }
-
+                            
                             </div>
 
 
 
                         </div>
+                    </div>
+                    <div className={style.pageLocation}>
+                        <PackageDisplay />
+
                     </div>
                 </div>
             </>

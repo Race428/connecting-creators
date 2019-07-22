@@ -5,7 +5,7 @@ import '../../../../CSS/odometer-theme-plaza.css'
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { updatePrice } from '../../../../Redux/Reducer';
+import { updatePrice, updateDistributionSelection } from '../../../../Redux/Reducer';
 import Odometer from 'react-odometerjs';
 
 function PackageDiplay(props) {
@@ -127,7 +127,7 @@ function PackageDiplay(props) {
     ratioPrice()
     stylePrice()
     musicPrice()
-    fontPrice()
+    // fontPrice()
     distributionPrice()
 
 
@@ -149,25 +149,60 @@ function PackageDiplay(props) {
 
         var x = pages.indexOf(props.location.pathname) + 1
 
+        // if (pages[x] === '/shop/checkout' && fontSelection ===
+        //     'Type Here' && distributionPrices.length < 1) {
 
-        if (props.fontSelection === 'option4') {
-            window.alert('please type in name of custom font')
-        }
+        //     window.alert('Please Add Your Font Selection and Choose a Distribution Option')
+        //     props.history.push(pages[5])
+        // }
+        // else {
+        //     props.history.push(pages[x])
 
-        else {
-            props.history.push(pages[x])
+        // }
 
-        }
+        // if (pages[x] === '/shop/checkout' && fontSelection ===
+        //     'Type Here' && distributionPrices.length >= 1 ) {
+
+        //     window.alert('Please Add Your Font Selection hi')
+           
+        // } else{
+        //     props.history.push(pages[5])
+
+        // }
 
         if (props.distributionSelection.length === 0 && y === '/shop/select-distribution-options') {
-            window.alert('please select at least one distribution option')
-            props.history.push('/shop/select-distribution-options')
-        }
 
+            window.alert('Please Choose a Distribution Option')
+           
+
+            // props.history.push('/shop/select-distribution-options')
+        }
         else {
             props.history.push(pages[x])
 
-            // props.history.push(`/shop/select-distribution-options`)
+           
+        }
+
+
+        // if (props.fontSelection === 'Type Here' && pages[x] !== '/shop/checkout') {
+        //     window.alert('please type in name of custom font')
+        // }
+
+        // else {
+        //     props.history.push(pages[x])
+
+        // }
+
+       
+        if (props.fontSelection === 'Type Here' && y === '/shop/select-font') {
+            window.alert('Please give us your font name.')
+            props.history.push('/shop/select-font')
+        }
+
+        else {
+            // props.history.push(pages[x])
+
+           
         }
 
     }
@@ -179,9 +214,9 @@ function PackageDiplay(props) {
 
         <div className={style.selectedOptionDetails}>
 
-<div className={style.priceTitle}>Estimated Price: $</div>
+            <div className={style.priceTitle}>Estimated Price: $</div>
             <div className={style.odeometer}>
-            <Odometer value={sumOfNums} format="(dddd)" />
+                <Odometer value={sumOfNums} format="(dddd)" />
             </div>
             <div className={style.button} onClick={() => next()}>NEXT</div>
         </div>

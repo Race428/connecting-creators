@@ -49,6 +49,36 @@
     /* margin-top: 5em; */
 }
 
+
+.inputContainer{
+    display: flex;
+    margin: auto;
+    width: 50%;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-around; 
+    align-items: center;
+    border-radius: 60px;
+
+
+}
+
+.inputContainer h1 { 
+    color: black;
+    font-size: 2em;
+
+}
+
+.inputContainer input {
+    border-radius: 60px;
+    border: none;
+    border: 1px solid grey;
+    height: 2em;
+    width: 20em;
+    padding-left: .3em;
+    font-size: 1em;
+}
+
 .description {
     margin: 2em;
     text-align: left;
@@ -233,6 +263,8 @@
     border-radius: 60px;
     padding-left: 1em;
     border-color: #007fff;
+    /* all: none; */
+
     
 }
 
