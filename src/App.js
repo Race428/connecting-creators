@@ -11,6 +11,7 @@ import store from './Redux/Store'
 
 
 function App() {
+  
   return (
     <Provider store={store}>
 

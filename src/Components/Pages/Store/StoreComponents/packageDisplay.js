@@ -149,33 +149,12 @@ function PackageDiplay(props) {
 
         var x = pages.indexOf(props.location.pathname) + 1
 
-        // if (pages[x] === '/shop/checkout' && fontSelection ===
-        //     'Type Here' && distributionPrices.length < 1) {
-
-        //     window.alert('Please Add Your Font Selection and Choose a Distribution Option')
-        //     props.history.push(pages[5])
-        // }
-        // else {
-        //     props.history.push(pages[x])
-
-        // }
-
-        // if (pages[x] === '/shop/checkout' && fontSelection ===
-        //     'Type Here' && distributionPrices.length >= 1 ) {
-
-        //     window.alert('Please Add Your Font Selection hi')
-           
-        // } else{
-        //     props.history.push(pages[5])
-
-        // }
 
         if (props.distributionSelection.length === 0 && y === '/shop/select-distribution-options') {
 
             window.alert('Please Choose a Distribution Option')
            
 
-            // props.history.push('/shop/select-distribution-options')
         }
         else {
             props.history.push(pages[x])
@@ -184,28 +163,19 @@ function PackageDiplay(props) {
         }
 
 
-        // if (props.fontSelection === 'Type Here' && pages[x] !== '/shop/checkout') {
-        //     window.alert('please type in name of custom font')
-        // }
-
-        // else {
-        //     props.history.push(pages[x])
-
-        // }
-
-       
         if (props.fontSelection === 'Type Here' && y === '/shop/select-font') {
             window.alert('Please give us your font name.')
             props.history.push('/shop/select-font')
         }
 
         else {
-            // props.history.push(pages[x])
+         
 
            
         }
 
     }
+    
 
     // making a funtion that takes int he index of the path name that then adds one and this.props.history.push's to the next index. Do the same opposite for the back button 
 
@@ -214,11 +184,13 @@ function PackageDiplay(props) {
 
         <div className={style.selectedOptionDetails}>
 
-            <div className={style.priceTitle}>Estimated Price: $</div>
-            <div className={style.odeometer}>
-                <Odometer value={sumOfNums} format="(dddd)" />
+            <div className={style.priceTitle}>Estimated Price: $  <div className={style.odeometer}>
+                <Odometer value={sumOfNums} format="(dddd)" /></div>
+           
             </div>
-            <div className={style.button} onClick={() => next()}>NEXT</div>
+            <div className={style.button} onClick={() => next()}><h1>
+                NEXT
+            </h1></div>
         </div>
 
     </div>

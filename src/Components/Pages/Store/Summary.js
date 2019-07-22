@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 
 
 import style from '../../../CSS/summary.module.css'
-import dist from 'react-odometerjs';
+
 
 function Summary(props) {
     const { packageSelection, detailSelection, ratioSelection, styleSelection, musicSelection, fontSelection, distributionSelection } = props
@@ -136,7 +136,13 @@ function Summary(props) {
     return <div className={style.pageView}>
 
         <div className={style.summaryContainer}>
+         
+            <div className={style.logo}>
+                <img src ='https://s3-us-west-1.amazonaws.com/achesonco/BlackConnecting.png' alt ='logo'/>
+            </div>
             <h1 className={style.title}>Package Summary</h1>
+            <div className={style.container}> 
+           
             <div className={style.selectionList}>
                 <h1 id={style.label}>Video Package-</h1> <h1 id={style.value}>{totalPrice[0]}</h1>
             </div>
@@ -158,7 +164,7 @@ function Summary(props) {
 
 
 
-            <div className={style.container}>
+           
 
 
             </div>

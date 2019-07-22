@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import navStyles from '../../CSS/nav.module.css'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+
 // import Logo from '../Images/logo.PNG'
 
-export default class Nav extends Component {
+class Nav extends Component {
    
-   
+   componentDidMount(){
+
+    console.log(this.props)
+       
+   }
     render() {
         return (
             <>
@@ -40,3 +46,11 @@ export default class Nav extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        ...state
+    }
+}
+
+export default connect(mapStateToProps)(Nav)
