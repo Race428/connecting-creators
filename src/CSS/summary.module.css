@@ -24,16 +24,50 @@
 
 }
 
+
+
 .title{ 
     color: black;
-    font-size: 3em;
+    font-size: 1em;
     /* background-color: red; */
-    border-bottom: 3px solid #ccc;
+    border-bottom: 2px solid #ccc;
     padding-bottom: 15px;
+    margin-top: 1em;
 }
 
-.filler{
+.container{
     height: 100%;
     width: 100%;
-    background-color: green;
+    /* background-color: green; */
+}
+
+.container h1 { 
+    color: black;
+}
+
+
+.selectionList{
+   display: flex;
+}
+
+
+.selectionList h1 { 
+    color: black;
+}
+
+#label{
+
+   display: flex;
+   justify-content: flex-start;
+   
+    width: 15em;
+    border: 1px solid black;
+}
+
+#value{
+    display: flex;
+    justify-content: flex-start;
+    
+     width: 10em;
+     border: 1px solid black;
 }
