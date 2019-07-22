@@ -7,16 +7,25 @@ import style from '../../../CSS/summary.module.css'
 
 function Summary(props) {
 
-console.log(props)
+    console.log(props)
 
 
-return <div className={style.pageView}>
+    return <div className={style.pageView}>
 
-    <h2>Package Summary</h2>
+        <div className={style.summaryContainer}>
+            <h1 className={style.title}>Package Summary</h1>
+            
+            
+
+        <div className={style.filler}>
+
+        </div>
+        </div>
 
 
 
-</div>
+
+    </div>
 
 
 }
