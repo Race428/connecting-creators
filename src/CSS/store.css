@@ -1,5 +1,5 @@
 .option1 {
-    width: 60%;
+    width: 70%;
     /* height: .5em; */
     border-radius: 60px;
     /* margin: .3em; */
@@ -17,7 +17,7 @@
 }
 
 .option2 {
-    width: 60%;
+    width: 70%;
     /* height: .5em; */
     border-radius: 60px;
     /* margin: .3em; */
@@ -35,7 +35,7 @@
 }
 
 .option3 {
-    width: 60%;
+    width: 70%;
     /* height: .5em; */
     border-radius: 60px;
     /* margin: .3em; */
@@ -53,7 +53,7 @@
 }
 
 .option4 {
-    width: 60%;
+    width: 70%;
     /* height: .5em; */
     border-radius: 60px;
     /* margin: .3em; */
@@ -81,7 +81,7 @@
 
 
 .selectedoption4 {
-    width: 80%;
+    width: 70%;
     height: 2.5em;
     border-radius: 60px;
     margin: .3em;

@@ -33,40 +33,40 @@ class Step6 extends Component {
     componentDidMount() {
         if (this.props.distributionSelection.length > 0) {
             var name = this.props.distributionSelection
-            var lastIndex = this.props.distributionSelection.length-1
-            
-          
-          for(let i = 0; i<name.length; i++){
+            var lastIndex = this.props.distributionSelection.length - 1
 
-            var element = name[i]
-           
-          
+
+            for (let i = 0; i < name.length; i++) {
+
+                var element = name[i]
+
+
+                this.setState({
+                    [element]: true,
+                    selectedOptions: name,
+                })
+
+
+            }
+
             this.setState({
-                [element]: true,
-              selectedOptions: name,
+                selected: this.props.distributionSelection[lastIndex]
             })
 
-
-          }
-          
-          this.setState({
-              selected: this.props.distributionSelection[lastIndex]
-          })
-
-        } 
-        else { 
+        }
+        else {
             this.setState({
-                option1:true,
-                selectedOptions:['option1'],
+                option1: true,
+                selectedOptions: ['option1'],
                 selected: 'option1'
             })
         }
-       
+
 
     }
 
     componentDidUpdate = () => {
-      
+
         this.props.updateDistributionSelection(this.state.selectedOptions)
 
     }
@@ -199,7 +199,7 @@ class Step6 extends Component {
 
 
 
-    
+
 
 
 
@@ -212,7 +212,7 @@ class Step6 extends Component {
             <>
                 <div className={style.pageView}>
                     <div className={style.pageLocation}>
-                    <PageLocation />
+                        <PageLocation />
 
                     </div>
                     <div className={style.selections}>
@@ -256,7 +256,7 @@ class Step6 extends Component {
                             </div>
 
 
-                            <PackageDisplay />
+             
                         </div>
                         <div className={style.optionContainer}>
 
@@ -277,52 +277,52 @@ class Step6 extends Component {
 
                                         >Facebook</div>
                                 }
-   {
+                                {
                                     this.state.option2 ?
-                                    <div id='selected' className='option2'
+                                        <div id='selected' className='option2'
 
-                                    onClick={this.ratio2Select}
+                                            onClick={this.ratio2Select}
 
-                                >Instagram</div>:
-                                <div id={`${this.state.option2}`} className='option2'
+                                        >Instagram</div> :
+                                        <div id={`${this.state.option2}`} className='option2'
 
-                                onClick={this.ratio2Select}
+                                            onClick={this.ratio2Select}
 
-                            >Instagram</div>
+                                        >Instagram</div>
                                 }
-                               
 
-                               {
+
+                                {
                                     this.state.option3 ?
-                                    <div id='selected' className='option3'
+                                        <div id='selected' className='option3'
 
-                                    onClick={this.ratio3Select}
+                                            onClick={this.ratio3Select}
 
-                                >Instagram Stories</div>:
-                                <div id={`${this.state.option3}`} className='option3'
+                                        >Instagram Stories</div> :
+                                        <div id={`${this.state.option3}`} className='option3'
 
-                                onClick={this.ratio3Select}
+                                            onClick={this.ratio3Select}
 
-                            >Instagram Stories</div>
+                                        >Instagram Stories</div>
                                 }
-                               
 
 
 
-                               {
+
+                                {
                                     this.state.option4 ?
-                                    <div id='selected' className='option4'
+                                        <div id='selected' className='option4'
 
-                                    onClick={this.ratio4Select}
+                                            onClick={this.ratio4Select}
 
-                                >YouTube Highlights</div>:
-                                <div id={`${this.state.option4}`} className='option4'
+                                        >YouTube Highlights</div> :
+                                        <div id={`${this.state.option4}`} className='option4'
 
-                                onClick={this.ratio4Select}
+                                            onClick={this.ratio4Select}
 
-                            >YouTube Highlights</div>
+                                        >YouTube Highlights</div>
                                 }
-                               
+
 
 
                             </div>
@@ -334,13 +334,17 @@ class Step6 extends Component {
 
 
 
-                              
+
 
                             </div>
 
 
 
                         </div>
+                    </div>
+                    <div className={style.pageLocation}>
+                        <PackageDisplay />
+
                     </div>
                 </div>
             </>

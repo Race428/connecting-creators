@@ -34,7 +34,7 @@ function PackageDiplay(props) {
 
     const ratioPrices = [0, 150, 300]
 
-    const stylePrices = [0, 0, 100]
+    const stylePrices = [0, 0, 0]
 
     const musicPrices = [0, 0, 0]
 

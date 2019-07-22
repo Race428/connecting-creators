@@ -232,7 +232,7 @@ class Step4 extends Component {
 
 
                             <div className={style.optionButtons}>
-                                <h2>Select Your Style and Color</h2>
+                                <h4>Select Your Style and Color</h4>
 
 
                                 <div id={`${this.state.option1}`} className='option1'
@@ -255,7 +255,7 @@ class Step4 extends Component {
 
                             <div className={style.optionDescription}>
 
-                                <h2>Select Your Music</h2>
+                                <h4>Select Your Music</h4>
 
 
                                 <div id={`${this.state.music1}`} className='option1'
@@ -273,17 +273,7 @@ class Step4 extends Component {
                                     onClick={this.music3Select}
                                     className='option3'>Alt</div>
 
-
-
-
-
-
-
-
-
-
->
-                                
+                        
 
                             </div>
 
