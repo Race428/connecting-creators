@@ -1,6 +1,6 @@
 .option1 {
-    width: 80%;
-    height: 2.5em;
+    width: 60%;
+    /* height: .5em; */
     border-radius: 60px;
     /* margin: .3em; */
     border: solid 1px black;
@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .option1:hover {
@@ -17,16 +17,16 @@
 }
 
 .option2 {
-    width: 80%;
-    height: 2.5em;
+    width: 60%;
+    /* height: .5em; */
     border-radius: 60px;
-    margin: .3em;
+    /* margin: .3em; */
     border: solid 1px black;
     all: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .option2:hover {
@@ -35,16 +35,16 @@
 }
 
 .option3 {
-    width: 80%;
-    height: 2.5em;
+    width: 60%;
+    /* height: .5em; */
     border-radius: 60px;
-    margin: .3em;
+    /* margin: .3em; */
     border: solid 1px black;
     all: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .option3:hover {
@@ -53,16 +53,16 @@
 }
 
 .option4 {
-    width: 80%;
-    height: 2.5em;
+    width: 60%;
+    /* height: .5em; */
     border-radius: 60px;
-    margin: .3em;
+    /* margin: .3em; */
     border: solid 1px black;
     all: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .option4:hover {
@@ -90,7 +90,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .seletedoption4:hover {

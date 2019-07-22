@@ -124,13 +124,13 @@ class Step1 extends Component {
 
                                 {
                                     this.state.selected === 'option1' ?
-                                        <img src='https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option1-image' name='option1-image' /> :
+                                        <img src='https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option1-image' name='option1-image' className={style.step1Image} /> :
                                         <></>
                                 }
 
                                 {
                                     this.state.selected === 'option2' ?
-                                        <img src='https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option2-image' name='option2-image' /> :
+                                        <img src='https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option2-image' name='option2-image' className={style.step1Image} /> :
                                         <> </>
 
                                 }
@@ -139,7 +139,7 @@ class Step1 extends Component {
 
                                 {
                                     this.state.selected === 'option3' ?
-                                        <img src=' https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option3-image' name='option3-image' /> :
+                                        <img src=' https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='fs' id='option3-image' name='option3-image' className={style.step1Image} /> :
                                         <> </>
                                 }
 
@@ -152,7 +152,7 @@ class Step1 extends Component {
 
 
                             <div className={style.optionButtons}>
-                                <h5>Select Video Package</h5>
+                                <h4>Select Video Package</h4>
 
 
                                 <div id={`${this.state.option1}`} className='option1'

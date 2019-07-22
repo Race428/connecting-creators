@@ -179,10 +179,9 @@ function PackageDiplay(props) {
 
         <div className={style.selectedOptionDetails}>
 
+<div className={style.priceTitle}>Estimated Price: $</div>
             <div className={style.odeometer}>
-
-                <Odometer value={sumOfNums} format="(.ddd),dd" />
-
+            <Odometer value={sumOfNums} format="(dddd)" />
             </div>
             <div className={style.button} onClick={() => next()}>NEXT</div>
         </div>

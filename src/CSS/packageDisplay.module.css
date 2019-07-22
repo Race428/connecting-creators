@@ -14,9 +14,10 @@
 .selectedOptionDetails{ 
     height: 100%;
     width: 100%;
-background-color: grey;
+background-color: rgb(243, 240, 240);
 display: flex;
 align-items: center;
+/* border-top: 1px solid  */
 }
 
 
@@ -31,11 +32,17 @@ align-items: center;
 }
 
 
+.priceTitle{
+    font-size: 2em;
+    font-family: "Helvetica Neue", sans-serif;
+    margin-left: 1em;
+}
+
 .odeometer{
-    color: black;
-    font-size: .5em;
-    height: 100%;
-    /* background-color: yellow; */
-  display: flex;
-  align-items: center;
+
+    font-size: 2em;
+    width: 4em;
+    /* background-color: blue; */
+  
+
 }
