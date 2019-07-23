@@ -9,7 +9,7 @@ class Nav extends Component {
    
    componentDidMount(){
 
-    console.log(this.props)
+
        
    }
     render() {
@@ -19,7 +19,7 @@ class Nav extends Component {
            
             <nav>
                <Link to='/'>
-                <img className={navStyles.logo} src='https://achesonco.s3-us-west-1.amazonaws.com/BlackConnecting.png ' alt='logo' /> 
+                <img className={navStyles.logo} src='https://s3-us-west-1.amazonaws.com/achesonco/BlackConnecting.png ' alt='logo' /> 
                 </Link>
                
                 <Link to='/podcasts'>
