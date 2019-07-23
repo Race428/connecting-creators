@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from 'react'
 import axios from 'axios';
-import landingStyles from '../../CSS/landingPage.module.css'
+import styles from '../../CSS/landingPage.module.css'
 import hero from '../Images/pic.JPG'
 import { updatePodcasts } from '../../Redux/Reducer'
 
@@ -15,31 +15,50 @@ class LandingPage extends Component {
 
 
     componentDidMount() {
-        axios.get('/api/podcasts/getall').then((res => {
 
-            this.props.updatePodcasts(res.data)
+    }
 
-        }))
+
+    play = () => { 
+    document.getElementById(styles.coverImage).style.display.
+    document.getElementById(styles.buttonShow).setAttribute('id', styles.fade)
+    document.getElementById(styles.iframe).setAttribute('id', styles.play)
+
+
+
     }
 
 
 
+
+    
     render() {
 
 
         return (
             <>
-                <div className={landingStyles.pageView}>
-                    <h1>Connecting Creators is a community where creatives can network, learn, and grow.</h1>
+                <div className={styles.pageView}>
+                    <h1 id={styles.title}>Tell Your Story Through Video.</h1>
 
-<div>
-                    {/* <iframe  className={landingStyles.video}  src="https://www.youtube.com/embed/5ebz0NIGgOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen /> 
-                 */}
+                    <div>
+
+                        <div id ={styles.coverImage} className={styles.coverImage}><img  src="https://static1.squarespace.com/static/5aa301a9b27e39ca4eddba98/5ba2fedf4ae237797f72ba56/5ba3017f0ebbe87a884fdebc/1537899852197/SizzleTHumbnail.JPG?format=750w"  alt ='cover'/></div>
+
+                        <div  id ={styles.buttonShow}  onClick={this.play}>  </div>
+
+                        
+                        <div className={styles.buttonOpaque}> </div>
+
+
+                        <iframe mozallowfullscreen="" allowfullscreen="" src="https://player.vimeo.com/video/289365725?wmode=opaque&amp;autoplay=1" width="640" webkitallowfullscreen=""  autoplay frameborder="0" height="360" id={styles.iframe}
+                            title='hi'
+                            ></iframe>
+
 
                     </div>
-                   
 
-                 
+
+
 
 
                 </div>
