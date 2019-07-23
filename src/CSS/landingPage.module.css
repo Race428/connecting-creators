@@ -1,6 +1,6 @@
 .pageView{
     width: 100vw; 
-    height: 90vh;
+    height: 85vh;
 }
 
 a{
@@ -21,6 +21,12 @@ h1{
     color: white;
 }
 
+
+.video{
+height: 60%;
+width: 30%;
+/* margin: auto; */
+}
 
 .imageBox{
 
