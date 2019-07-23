@@ -20,11 +20,13 @@ class LandingPage extends Component {
 
 
     play = () => { 
-    document.getElementById(styles.coverImage).style.display.
-    document.getElementById(styles.buttonShow).setAttribute('id', styles.fade)
+
+        document.getElementById('button-show').setAttribute('id', styles.fade)
+        document.getElementById('cover-image').setAttribute('id', styles.fade)
+
     document.getElementById(styles.iframe).setAttribute('id', styles.play)
 
-
+    
 
     }
 
@@ -42,9 +44,9 @@ class LandingPage extends Component {
 
                     <div>
 
-                        <div id ={styles.coverImage} className={styles.coverImage}><img  src="https://static1.squarespace.com/static/5aa301a9b27e39ca4eddba98/5ba2fedf4ae237797f72ba56/5ba3017f0ebbe87a884fdebc/1537899852197/SizzleTHumbnail.JPG?format=750w"  alt ='cover'/></div>
+                        <div id ='cover-image' className={styles.coverImage}><img  src="https://static1.squarespace.com/static/5aa301a9b27e39ca4eddba98/5ba2fedf4ae237797f72ba56/5ba3017f0ebbe87a884fdebc/1537899852197/SizzleTHumbnail.JPG?format=750w"  alt ='cover'/></div>
 
-                        <div  id ={styles.buttonShow}  onClick={this.play}>  </div>
+                        <div  id ='button-show' className={styles.buttonShow} onClick={this.play}>  </div>
 
                         
                         <div className={styles.buttonOpaque}> </div>

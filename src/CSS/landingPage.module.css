@@ -23,7 +23,9 @@ h1{
 
 
 .coverImage{
-    opacity: 1; overflow: hidden;;
+    opacity: 1; overflow: hidden;
+    z-index: 0;
+
 }
 .coverImage img { 
    
@@ -32,9 +34,7 @@ h1{
     display: none;
 }
 
-#play{
-    display: block;
-}
+
 .buttonOpaque{
 
     position: absolute;
@@ -64,8 +64,9 @@ display: none;
 
 
 
-.play{
-    display: initial;
+#play{
+    z-index: 1;
+    opacity: 1;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;
@@ -79,16 +80,15 @@ width: 30%;
 }
 
 
+
 #fade {
-    opacity: 1;
+    opacity: 0;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;
     }
  
-    #fade {
-       opacity: 0;
-       }
+ 
 
 
 .p{
